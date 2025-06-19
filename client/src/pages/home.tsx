@@ -25,7 +25,7 @@ export default function Home() {
             <div className="text-xl md:text-2xl tracking-widest mt-2">INITIATIVE</div>
           </div>
           
-          <p className="text-xl md:text-2xl mb-8 leading-relaxed text-shadow">501(c)(3)</p>
+          <p className="text-xl md:text-2xl mb-8 leading-relaxed text-shadow">Empowering the Next Generation</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/programs">
