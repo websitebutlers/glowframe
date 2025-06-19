@@ -65,7 +65,7 @@ export default function AboutSection() {
                 <span className="text-gray-500 text-sm">Photo Coming Soon</span>
               </div>
               <h3 className="text-xl font-bold mb-2">Irin "Iroc" Daniels</h3>
-              <p className="text-glow-gold font-semibold mb-2">Co-Founder</p>
+              <p className="text-glow-gold font-semibold mb-2">Co-Founder/ Director of Programming</p>
               <p className="text-gray-300 text-sm">Visionary leader driving creative empowerment in underserved communities</p>
             </div>
 
@@ -114,14 +114,7 @@ export default function AboutSection() {
               <p className="text-gray-300 text-sm">Financial stewardship ensuring responsible resource management</p>
             </div>
 
-            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-              <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <span className="text-gray-500 text-sm">Photo Coming Soon</span>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Irin Daniels</h3>
-              <p className="text-glow-gold font-semibold mb-2">Founder/Director of Programming</p>
-              <p className="text-gray-300 text-sm">Curriculum development and hands-on program implementation</p>
-            </div>
+            
 
             <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
               <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
