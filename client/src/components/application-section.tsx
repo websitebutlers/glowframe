@@ -133,6 +133,27 @@ export default function ApplicationSection() {
             <p className="text-gray-300">
               Complete this application to join the Glow-Frame Initiative. This comprehensive program is designed for individuals aged 16-24, offering hands-on training on actual film sets and behind the scenes at live events.
             </p>
+            
+            {/* Privacy Disclaimer */}
+            <div className="mt-6 p-4 bg-gray-800 border border-gray-700 rounded-lg">
+              <div className="flex items-start space-x-2">
+                <div className="w-5 h-5 mt-0.5 text-electric-blue">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-sm font-semibold text-white mb-2">Your Privacy Matters</h4>
+                  <p className="text-xs text-gray-300 leading-relaxed">
+                    Glow Frame Initiative values your privacy and is committed to protecting your personal information. 
+                    The data you provide is used solely for our internal contact records and program administration. 
+                    We never share your information with third-party sources for any reason. Your information 
+                    remains confidential and is used only to support your participation in our programs and to 
+                    keep you informed about relevant opportunities.
+                  </p>
+                </div>
+              </div>
+            </div>
           </CardHeader>
           
           <CardContent>
