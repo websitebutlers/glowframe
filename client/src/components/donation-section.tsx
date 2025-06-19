@@ -6,13 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { DONATION_AMOUNTS } from "@/lib/constants";
@@ -22,136 +16,23 @@ const stripePromise = import.meta.env.VITE_STRIPE_PUBLIC_KEY
   ? loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
   : null;
 
-const equipmentContactSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Valid email is required"),
-  equipmentDonation: z.boolean().default(false),
-  message: z.string().min(1, "Message is required")
-});
-
-type EquipmentContact = z.infer<typeof equipmentContactSchema>;
-
 function EquipmentContactForm() {
-  const { toast } = useToast();
-  
-  const form = useForm<EquipmentContact>({
-    resolver: zodResolver(equipmentContactSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      equipmentDonation: false,
-      message: ""
-    }
-  });
-
-  const submitContact = useMutation({
-    mutationFn: async (data: EquipmentContact) => {
-      const response = await apiRequest("POST", "/api/equipment-contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your interest. We'll be in touch soon.",
-      });
-      form.reset();
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Submission Failed",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    }
-  });
-
-  const onSubmit = (data: EquipmentContact) => {
-    submitContact.mutate(data);
-  };
-
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name *</FormLabel>
-                <FormControl>
-                  <Input {...field} className="bg-gray-900 border-gray-700 focus:border-electric-blue" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email *</FormLabel>
-                <FormControl>
-                  <Input type="email" {...field} className="bg-gray-900 border-gray-700 focus:border-electric-blue" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-
-        <FormField
-          control={form.control}
-          name="equipmentDonation"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                  className="border-gray-700 data-[state=checked]:bg-electric-blue data-[state=checked]:border-electric-blue"
-                />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel>
-                  I am interested in donating equipment
-                </FormLabel>
-              </div>
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message *</FormLabel>
-              <FormControl>
-                <Textarea
-                  {...field}
-                  rows={4}
-                  className="bg-gray-900 border-gray-700 focus:border-electric-blue"
-                  placeholder="Tell us about your equipment donation or how you'd like to get involved..."
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <Button
-          type="submit"
-          disabled={submitContact.isPending}
-          className="w-full bg-electric-blue text-black hover:bg-blue-400 font-bold"
-          size="lg"
-        >
-          {submitContact.isPending ? "Sending..." : "Contact Us About Equipment"}
+    <div className="text-center space-y-4">
+      <a 
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdVY8OItflFgs9aT2pBy820n1taEZYAvYo8ZrsvjA6SsrX3FA/viewform?vc=0&c=0&w=1&flr=0"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block"
+      >
+        <Button className="w-full bg-glow-gold text-black hover:bg-yellow-400 font-bold">
+          Contact Us About Equipment
         </Button>
-      </form>
-    </Form>
+      </a>
+      <p className="text-xs text-gray-400">
+        Opens in a new window • Secure Google Form
+      </p>
+    </div>
   );
 }
 
@@ -164,60 +45,51 @@ function CheckoutForm({ amount, donorInfo }: CheckoutFormProps) {
   const stripe = useStripe();
   const elements = useElements();
   const { toast } = useToast();
-  const [isProcessing, setIsProcessing] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
 
     if (!stripe || !elements) {
       return;
     }
 
-    setIsProcessing(true);
-
-    const { error } = await stripe.confirmPayment({
+    const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${window.location.origin}#donate`,
+        return_url: `${window.location.origin}/get-involved`,
       },
     });
 
-    if (error) {
+    if (result.error) {
       toast({
         title: "Payment Failed",
-        description: error.message,
+        description: result.error.message,
         variant: "destructive",
       });
-    } else {
-      toast({
-        title: "Thank You!",
-        description: "Your donation has been processed successfully.",
-      });
     }
-
-    setIsProcessing(false);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold mb-2">Complete Your Donation</h3>
+    <div className="space-y-6">
+      <div className="text-center">
+        <h3 className="text-xl font-bold mb-2">Complete Your Donation</h3>
         <p className="text-gray-300">
           ${amount} donation from {donorInfo.name}
         </p>
       </div>
       
-      <PaymentElement />
-      
-      <Button
-        type="submit"
-        disabled={!stripe || isProcessing}
-        className="w-full bg-glow-gold text-black hover:bg-yellow-400 font-bold"
-        size="lg"
-      >
-        {isProcessing ? "Processing..." : `Donate $${amount}`}
-      </Button>
-    </form>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <PaymentElement />
+        <Button 
+          type="submit" 
+          disabled={!stripe}
+          className="w-full bg-glow-gold text-black hover:bg-yellow-400 font-bold"
+          size="lg"
+        >
+          Complete Donation
+        </Button>
+      </form>
+    </div>
   );
 }
 
@@ -228,16 +100,18 @@ export default function DonationSection() {
   const [donorName, setDonorName] = useState("");
   const [donorEmail, setDonorEmail] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  const [showPayment, setShowPayment] = useState(false);
 
   const createPaymentIntent = useMutation({
     mutationFn: async (data: { amount: number; name: string; email: string }) => {
-      const response = await apiRequest("POST", "/api/create-payment-intent", data);
+      const response = await apiRequest("POST", "/api/donations", data);
       return response.json();
     },
     onSuccess: (data) => {
       setClientSecret(data.clientSecret);
-      setShowPayment(true);
+      toast({
+        title: "Payment Initialized",
+        description: "Please complete your payment details below.",
+      });
     },
     onError: (error: any) => {
       toast({
@@ -245,8 +119,18 @@ export default function DonationSection() {
         description: error.message || "Failed to initialize payment. Please try again.",
         variant: "destructive",
       });
-    }
+    },
   });
+
+  const handleAmountSelect = (amount: number) => {
+    setSelectedAmount(amount);
+    setCustomAmount("");
+  };
+
+  const handleCustomAmountChange = (value: string) => {
+    setCustomAmount(value);
+    setSelectedAmount(null);
+  };
 
   const handleDonationStart = () => {
     if (!stripePromise) {
@@ -278,10 +162,10 @@ export default function DonationSection() {
       return;
     }
 
-    if (!donorEmail.trim() || !donorEmail.includes("@")) {
+    if (!donorEmail.trim()) {
       toast({
-        title: "Valid Email Required",
-        description: "Please enter a valid email address.",
+        title: "Email Required",
+        description: "Please enter your email address.",
         variant: "destructive",
       });
       return;
@@ -289,46 +173,25 @@ export default function DonationSection() {
 
     createPaymentIntent.mutate({
       amount,
-      name: donorName,
-      email: donorEmail
+      name: donorName.trim(),
+      email: donorEmail.trim(),
     });
   };
 
-  const handleAmountSelect = (amount: number) => {
-    setSelectedAmount(amount);
-    setCustomAmount("");
-  };
-
-  const handleCustomAmountChange = (value: string) => {
-    setCustomAmount(value);
-    setSelectedAmount(null);
-  };
-
-  if (showPayment && clientSecret && stripePromise) {
+  if (clientSecret && stripePromise) {
     return (
       <section id="donate" className="py-24 bg-gray-900">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="bg-black border-gray-800">
-            <CardContent className="p-8">
-              <Elements 
-                stripe={stripePromise} 
-                options={{ 
-                  clientSecret,
-                  appearance: {
-                    theme: 'night',
-                    variables: {
-                      colorPrimary: '#FFD700',
-                    }
-                  }
-                }}
-              >
+          <Elements stripe={stripePromise} options={{ clientSecret }}>
+            <Card className="bg-black border-gray-800">
+              <CardContent className="pt-6">
                 <CheckoutForm 
                   amount={selectedAmount || parseFloat(customAmount)} 
                   donorInfo={{ name: donorName, email: donorEmail }}
                 />
-              </Elements>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </Elements>
         </div>
       </section>
     );
