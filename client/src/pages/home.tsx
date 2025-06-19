@@ -14,7 +14,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080')"
+            backgroundImage: "url('@assets/Media/Site Images/operator-using-camera-on-the-set-2025-03-18-22-13-17-utc.jpg')"
           }}
         >
           <div className="absolute inset-0 bg-black/70"></div>

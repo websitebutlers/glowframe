@@ -44,10 +44,10 @@ export default function CommunitySection() {
         </div>
 
         <div className="bg-black p-8 rounded-lg border border-gray-800">
-          {/* Young diverse film crew working together on a professional set */}
+          {/* Theater performers collaborating on production */}
           <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=400" 
-            alt="Diverse film crew collaboration" 
+            src="@assets/Media/Site Images/two-performers-sitting-on-floor-in-theater-2025-03-10-05-13-22-utc.jpg" 
+            alt="Theater performers collaborating on production" 
             className="w-full h-64 object-cover rounded-lg mb-6"
           />
           <h3 className="text-3xl font-bold mb-4">Building Tomorrow's Storytellers</h3>

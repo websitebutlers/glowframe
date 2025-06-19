@@ -20,28 +20,28 @@ export default function AboutSection() {
           </div>
           
           <div className="grid grid-cols-2 gap-4">
-            {/* Diverse group of young filmmakers collaborating on a project in a modern studio */}
+            {/* Audio production collaboration in professional studio */}
             <img 
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Young diverse filmmakers collaborating" 
+              src="@assets/Media/Site Images/collaborating-in-music-studio-with-audio-equipment-2025-03-16-05-21-25-utc.jpg" 
+              alt="Audio production collaboration in professional studio" 
               className="rounded-lg shadow-lg object-cover h-48"
             />
-            {/* Professional film equipment including cameras and lighting gear */}
+            {/* Professional camera operator setting up equipment */}
             <img 
-              src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Professional film equipment setup" 
+              src="@assets/Media/Site Images/operator-setting-his-camera-before-shooting-2025-03-18-22-10-20-utc.jpg" 
+              alt="Professional camera operator setting up equipment" 
               className="rounded-lg shadow-lg object-cover h-48"
             />
-            {/* Film production behind the scenes with crew working */}
+            {/* Live event camera crew capturing production */}
             <img 
-              src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Film production behind the scenes" 
+              src="@assets/Media/Site Images/cameramen-capturing-moments-at-a-live-event-2025-02-10-06-55-51-utc.jpg" 
+              alt="Live event camera crew capturing production" 
               className="rounded-lg shadow-lg object-cover h-48"
             />
-            {/* Modern video editing suite with multiple monitors */}
+            {/* Sound professionals working in studio environment */}
             <img 
-              src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Video editing suite setup" 
+              src="@assets/Media/Site Images/sound-professionals-2025-03-16-23-48-18-utc.jpg" 
+              alt="Sound professionals working in studio environment" 
               className="rounded-lg shadow-lg object-cover h-48"
             />
           </div>
