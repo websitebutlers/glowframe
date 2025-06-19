@@ -4,13 +4,9 @@ import Stripe from "stripe";
 import { storage } from "./storage";
 import { insertApplicationSchema, insertDonationSchema } from "@shared/schema";
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
-}
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2023-10-16",
-});
+const stripe = process.env.STRIPE_SECRET_KEY 
+  ? new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: "2025-05-28.basil" })
+  : null;
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Application submission endpoint
@@ -44,6 +40,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Stripe payment intent creation for donations
   app.post("/api/create-payment-intent", async (req, res) => {
+    if (!stripe) {
+      return res.status(503).json({ 
+        success: false, 
+        message: "Payment processing is currently unavailable. Please contact us directly to make a donation." 
+      });
+    }
+
     try {
       const { amount, email, name } = req.body;
       
@@ -92,6 +95,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Webhook endpoint for Stripe events
   app.post("/api/stripe-webhook", async (req, res) => {
+    if (!stripe) {
+      return res.status(503).json({ 
+        success: false, 
+        message: "Payment processing is currently unavailable." 
+      });
+    }
+
     try {
       const sig = req.headers['stripe-signature'];
       

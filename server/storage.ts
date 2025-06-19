@@ -47,7 +47,16 @@ export class MemStorage implements IStorage {
   async createApplication(insertApplication: InsertApplication): Promise<Application> {
     const id = this.currentApplicationId++;
     const application: Application = { 
-      ...insertApplication, 
+      ...insertApplication,
+      portfolioLinks: insertApplication.portfolioLinks || null,
+      workshopGoals: insertApplication.workshopGoals || null,
+      challenges: insertApplication.challenges || null,
+      workDescription: insertApplication.workDescription || null,
+      connectWith: insertApplication.connectWith || null,
+      hearAbout: insertApplication.hearAbout || null,
+      additionalComments: insertApplication.additionalComments || null,
+      presentWork: insertApplication.presentWork ?? false,
+      mailingList: insertApplication.mailingList ?? false,
       id, 
       createdAt: new Date() 
     };
@@ -63,6 +72,8 @@ export class MemStorage implements IStorage {
     const id = this.currentDonationId++;
     const donation: Donation = {
       ...insertDonation,
+      email: insertDonation.email || null,
+      name: insertDonation.name || null,
       id,
       status: "pending",
       stripePaymentIntentId: null,

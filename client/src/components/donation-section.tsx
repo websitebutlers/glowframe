@@ -12,11 +12,9 @@ import { apiRequest } from "@/lib/queryClient";
 import { DONATION_AMOUNTS } from "@/lib/constants";
 import { Video, Lightbulb, Mic, Monitor, Wrench } from "lucide-react";
 
-if (!import.meta.env.VITE_STRIPE_PUBLIC_KEY) {
-  throw new Error('Missing required Stripe key: VITE_STRIPE_PUBLIC_KEY');
-}
-
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+const stripePromise = import.meta.env.VITE_STRIPE_PUBLIC_KEY 
+  ? loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
+  : null;
 
 interface CheckoutFormProps {
   amount: number;
@@ -112,6 +110,15 @@ export default function DonationSection() {
   });
 
   const handleDonationStart = () => {
+    if (!stripePromise) {
+      toast({
+        title: "Payment Processing Unavailable",
+        description: "Online donations are currently unavailable. Please contact us directly to make a donation.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     const amount = selectedAmount || parseFloat(customAmount);
     
     if (!amount || amount < 1) {
