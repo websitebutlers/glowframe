@@ -40,10 +40,10 @@ export default function AboutSection() {
               alt="Live event camera crew capturing production" 
               className="rounded-lg shadow-lg w-full object-contain bg-gray-900"
             />
-            {/* Sound professionals working in studio environment */}
+            {/* Live theater concert show sound and video control */}
             <img 
-              src={businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc} 
-              alt="Sound professionals working in studio environment" 
+              src="/images/live-theater-concert-show-sound-video-music-contro-2025-01-10-06-01-03-utc.jpg" 
+              alt="Live theater concert show sound and video control" 
               className="rounded-lg shadow-lg w-full object-contain bg-gray-900"
             />
           </div>
