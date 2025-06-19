@@ -1,13 +1,8 @@
 import { SPONSORS } from "@/lib/constants";
+import { Link } from "wouter";
 import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
 
 export default function Footer() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer id="contact" className="bg-black border-t border-gray-800 py-16">
@@ -41,44 +36,29 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">Programs</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <button 
-                  onClick={() => scrollToSection("#programs")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/programs" className="hover:text-glow-gold transition-colors duration-200">
                   Workshops
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#apply")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/get-involved" className="hover:text-glow-gold transition-colors duration-200">
                   Apprenticeship
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#programs")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/programs" className="hover:text-glow-gold transition-colors duration-200">
                   Content Creation
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#programs")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/programs" className="hover:text-glow-gold transition-colors duration-200">
                   Audio Production
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#programs")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/programs" className="hover:text-glow-gold transition-colors duration-200">
                   AV Staging
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -87,44 +67,29 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">Organization</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <button 
-                  onClick={() => scrollToSection("#about")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/about" className="hover:text-glow-gold transition-colors duration-200">
                   About Us
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#community")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/community" className="hover:text-glow-gold transition-colors duration-200">
                   Our Team
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#about")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/about" className="hover:text-glow-gold transition-colors duration-200">
                   Mission
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#community")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/community" className="hover:text-glow-gold transition-colors duration-200">
                   Impact
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#community")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/community" className="hover:text-glow-gold transition-colors duration-200">
                   Partners
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -133,44 +98,29 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">Get Involved</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <button 
-                  onClick={() => scrollToSection("#apply")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/get-involved" className="hover:text-glow-gold transition-colors duration-200">
                   Apply
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#community")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/community" className="hover:text-glow-gold transition-colors duration-200">
                   Volunteer
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#donate")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/get-involved" className="hover:text-glow-gold transition-colors duration-200">
                   Donate
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#community")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/community" className="hover:text-glow-gold transition-colors duration-200">
                   Partner
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection("#contact")}
-                  className="hover:text-glow-gold transition-colors duration-200"
-                >
+                <Link href="/get-involved" className="hover:text-glow-gold transition-colors duration-200">
                   Contact
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -198,12 +148,12 @@ export default function Footer() {
               <button className="text-gray-400 hover:text-glow-gold text-sm transition-colors duration-200">
                 Terms of Service
               </button>
-              <button 
-                onClick={() => scrollToSection("#contact")}
+              <Link 
+                href="/get-involved"
                 className="text-gray-400 hover:text-glow-gold text-sm transition-colors duration-200"
               >
                 Contact
-              </button>
+              </Link>
             </div>
           </div>
         </div>

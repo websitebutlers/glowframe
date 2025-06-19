@@ -69,13 +69,14 @@ export default function ProgramsSection() {
               <p className="text-gray-300 mb-6">
                 Complete four workshops to become eligible for our comprehensive apprenticeship program!
               </p>
-              <Button
-                onClick={() => scrollToSection("#apply")}
-                className="bg-glow-gold text-black px-8 py-4 text-lg font-bold hover:bg-yellow-400 transition-colors duration-200"
-                size="lg"
-              >
-                Apply Now
-              </Button>
+              <Link href="/get-involved">
+                <Button
+                  className="bg-glow-gold text-black px-8 py-4 text-lg font-bold hover:bg-yellow-400 transition-colors duration-200"
+                  size="lg"
+                >
+                  Apply Now
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
