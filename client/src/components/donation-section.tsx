@@ -6,7 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { DONATION_AMOUNTS } from "@/lib/constants";
@@ -15,6 +21,139 @@ import { Video, Lightbulb, Mic, Monitor, Wrench } from "lucide-react";
 const stripePromise = import.meta.env.VITE_STRIPE_PUBLIC_KEY 
   ? loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY)
   : null;
+
+const equipmentContactSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Valid email is required"),
+  equipmentDonation: z.boolean().default(false),
+  message: z.string().min(1, "Message is required")
+});
+
+type EquipmentContact = z.infer<typeof equipmentContactSchema>;
+
+function EquipmentContactForm() {
+  const { toast } = useToast();
+  
+  const form = useForm<EquipmentContact>({
+    resolver: zodResolver(equipmentContactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      equipmentDonation: false,
+      message: ""
+    }
+  });
+
+  const submitContact = useMutation({
+    mutationFn: async (data: EquipmentContact) => {
+      const response = await apiRequest("POST", "/api/equipment-contact", data);
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your interest. We'll be in touch soon.",
+      });
+      form.reset();
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Submission Failed",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    }
+  });
+
+  const onSubmit = (data: EquipmentContact) => {
+    submitContact.mutate(data);
+  };
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name *</FormLabel>
+                <FormControl>
+                  <Input {...field} className="bg-gray-900 border-gray-700 focus:border-electric-blue" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email *</FormLabel>
+                <FormControl>
+                  <Input type="email" {...field} className="bg-gray-900 border-gray-700 focus:border-electric-blue" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <FormField
+          control={form.control}
+          name="equipmentDonation"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+              <FormControl>
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  className="border-gray-700 data-[state=checked]:bg-electric-blue data-[state=checked]:border-electric-blue"
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>
+                  I am interested in donating equipment
+                </FormLabel>
+              </div>
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Message *</FormLabel>
+              <FormControl>
+                <Textarea
+                  {...field}
+                  rows={4}
+                  className="bg-gray-900 border-gray-700 focus:border-electric-blue"
+                  placeholder="Tell us about your equipment donation or how you'd like to get involved..."
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <Button
+          type="submit"
+          disabled={submitContact.isPending}
+          className="w-full bg-electric-blue text-black hover:bg-blue-400 font-bold"
+          size="lg"
+        >
+          {submitContact.isPending ? "Sending..." : "Contact Us About Equipment"}
+        </Button>
+      </form>
+    </Form>
+  );
+}
 
 interface CheckoutFormProps {
   amount: number;
@@ -295,7 +434,7 @@ export default function DonationSection() {
 
           <Card className="bg-black border-gray-800">
             <CardHeader>
-              <CardTitle className="text-3xl font-bold">Equipment Donations</CardTitle>
+              <CardTitle className="text-3xl font-bold">Equipment Donations & Contact</CardTitle>
               <p className="text-gray-300">
                 We also accept donations of AV and video equipment. Your generous contributions help us equip aspiring filmmakers with the tools they need.
               </p>
@@ -325,19 +464,7 @@ export default function DonationSection() {
                 </div>
               </div>
 
-              <Button
-                onClick={() => {
-                  const element = document.querySelector("#contact");
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                variant="secondary"
-                className="w-full bg-electric-blue text-black hover:bg-blue-400 font-bold"
-                size="lg"
-              >
-                Contact Us About Equipment
-              </Button>
+              <EquipmentContactForm />
             </CardContent>
           </Card>
         </div>

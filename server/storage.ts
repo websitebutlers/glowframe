@@ -161,6 +161,18 @@ export class DatabaseStorage implements IStorage {
       .returning();
     return donation || undefined;
   }
+
+  async createApprenticeInquiry(insertInquiry: InsertApprenticeInquiry): Promise<ApprenticeInquiry> {
+    const [inquiry] = await db
+      .insert(apprenticeInquiries)
+      .values(insertInquiry)
+      .returning();
+    return inquiry;
+  }
+
+  async getApprenticeInquiries(): Promise<ApprenticeInquiry[]> {
+    return await db.select().from(apprenticeInquiries);
+  }
 }
 
 export const storage = new DatabaseStorage();
