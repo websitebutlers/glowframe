@@ -1,80 +1,62 @@
-export const WORKSHOP_CATEGORIES = [
-  {
-    id: 'content-creation',
-    title: 'Content Creation for Business',
-    description: 'Discover the secrets to creating high-quality, impactful content tailored for business success. Whether you\'re a beginner or have some experience, this event will empower you with hands-on knowledge from the best in the industry.',
-    status: 'available',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
-  },
-  {
-    id: 'audio-production',
-    title: 'Special Events Audio Production',
-    description: 'Gain expert insights into live audio and event production from industry veteran Chris Grimsley. Whether you\'re planning a corporate gathering, concert, or special event, this workshop will provide the technical skills and insider knowledge to make it a success.',
-    status: 'available',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
-  },
-  {
-    id: 'av-staging',
-    title: 'AV Staging Workshop',
-    description: 'Dive into the world of AV staging with expert-led sessions on LED wall, stage lighting design, setup, and live event production. Perfect for those interested in the behind-the-scenes magic of live performances and events.',
-    status: 'coming-soon',
-    image: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
-  },
-  {
-    id: 'camera-lighting',
-    title: 'Camera & Lighting Workshop',
-    description: 'Explore the art of cinematography and lighting design. Learn from industry professionals how to capture stunning visuals and create the perfect lighting setup for any scene.',
-    status: 'coming-soon',
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
-  },
-  {
-    id: 'grip-electric',
-    title: 'Grip & Electric Intensive',
-    description: 'Get hands-on with the essential tools of the trade in this intensive workshop focused on the grip and electric departments. Learn the skills needed to support camera rigs, lighting setups, and more.',
-    status: 'coming-soon',
-    image: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
-  },
-  {
-    id: 'filmmaking',
-    title: 'Two-Day Filmmaking Workshop',
-    description: 'Join us for an exciting day where you\'ll learn the basics of filmmaking from start to finish. Perfect for beginners or those looking to get a taste of the filmmaking process, this workshop will cover everything from scriptwriting to directing and editing.',
-    status: 'coming-soon',
-    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
-  }
-];
+// No upcoming workshops scheduled at this time
+export const WORKSHOP_CATEGORIES = [];
 
 export const PREVIOUS_WORKSHOPS = [
   {
-    id: 'intro-filmmaking-fall23',
-    title: 'Introduction to Filmmaking',
-    description: 'A comprehensive 3-day workshop covering the fundamentals of film production, from pre-production planning to post-production editing. Students created their first short films under professional mentorship.',
-    completedDate: 'October 2023',
-    participants: 18,
-    image: 'https://images.unsplash.com/photo-1489599387497-7c4a6760cf62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
+    id: 'producing-workshop-jun13',
+    title: 'Producing in the Industry',
+    description: 'An exclusive conversation with Marine Corps veteran and Arizona Production Association affiliate Parco Richardson on producing in the industry. Expert in digital filmmaking & video production, Issa Rae\'s Color Creative FYPP Year 2 producer for Toro de Oro (2022) and Plus 1 (2022).',
+    completedDate: 'June 13, 2024',
+    instructor: 'Parco Richardson - Producer & Writer',
+    location: 'Downtown Phoenix',
+    image: '@assets/Media/Workshop Fliers/1.png'
   },
   {
-    id: 'audio-basics-summer23',
-    title: 'Audio Production Fundamentals',
-    description: 'Hands-on training in live sound mixing, podcast production, and studio recording techniques. Participants worked with industry-standard equipment and software.',
-    completedDate: 'August 2023',
-    participants: 12,
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
+    id: 'led-video-wall-feb15',
+    title: 'LED Video Wall Level One',
+    description: 'Two-part class leading to employment opportunities. The first class covers stagehand and electrical basics, teaching backstage work with power and grip. The second focuses on building LED walls.',
+    completedDate: 'February 15, 2024',
+    instructor: 'Jared and Joe',
+    location: 'Downtown Phoenix',
+    maxStudents: 25,
+    partner: 'ShowBoss AV',
+    image: '@assets/Media/Workshop Fliers/2.png'
   },
   {
-    id: 'content-creator-spring23',
-    title: 'Digital Content Creation',
-    description: 'A 2-week intensive focused on social media content creation, video editing, and brand storytelling. Students launched their own content channels by the end of the program.',
-    completedDate: 'May 2023',
-    participants: 24,
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
+    id: 'scriptwriting-intro-dec14',
+    title: 'Scriptwriting Introduction',
+    description: 'Beginner-friendly workshop with a professional instructor. Get hands-on training on scriptwriting and understanding Final Draft scriptwriting basics.',
+    completedDate: 'December 14, 2023',
+    instructor: 'Jermaine A. Shoulders',
+    location: 'Downtown Phoenix',
+    image: '@assets/Media/Workshop Fliers/3.png'
   },
   {
-    id: 'lighting-workshop-winter23',
-    title: 'Professional Lighting Workshop',
-    description: 'Advanced lighting techniques for film and photography. Students learned to work with LED panels, gels, and professional grip equipment on real film sets.',
-    completedDate: 'February 2023',
-    participants: 15,
-    image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
+    id: 'special-event-audio-nov16',
+    title: 'Special Event Audio Production',
+    description: 'Learn how to do special event audio production from industry expert Chris Grimsley, Co-Owner of Flawless Frequency and Owner of Sideline Records. Has done live sound and video for Kanye West, Erykah Badu, and many more.',
+    completedDate: 'November 16, 2023',
+    instructor: 'Chris Grimsley',
+    location: 'Downtown Phoenix',
+    image: '@assets/Media/Workshop Fliers/4.png'
+  },
+  {
+    id: 'special-fx-makeup-apr12',
+    title: 'Special FX Makeup Workshop',
+    description: 'Learn how to do special FX makeup including bruises, cuts, burns, basic embellishments (aging, acne, rosacea, dark circles), bullet wounds, and scrapes with industry professional Toy Taylor Goodgame.',
+    completedDate: 'April 12, 2023',
+    instructor: 'Toy Taylor Goodgame - Owner of Motivating Beauty Coach, Published Author, Content Creator, Celebrity Makeup Artist, Licensed Hairstylist, Certified Makeup Artist, and SFX Artist',
+    location: 'Downtown Phoenix',
+    image: '@assets/Media/Workshop Fliers/5.png'
+  },
+  {
+    id: 'lighting-interviews-nov9',
+    title: 'Lighting for Interviews & Documentaries',
+    description: 'Learn how to do lighting for interviews and documentaries from Emmy-nominated writer/director/DP Irin Daniels. Credits include work with Churchy BET, Spectrum, NIKE, EBay, PayPal, Netflix, Hartbeat Studios, Meta, and more.',
+    completedDate: 'November 9, 2022',
+    instructor: 'Irin Daniels - Writer/Director/DP',
+    location: 'Downtown Phoenix',
+    image: '@assets/Media/Workshop Fliers/6.png'
   }
 ];
 
