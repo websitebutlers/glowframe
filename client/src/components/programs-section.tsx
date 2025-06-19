@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
-import { WORKSHOP_CATEGORIES } from "@/lib/constants";
+import { WORKSHOP_CATEGORIES, PREVIOUS_WORKSHOPS } from "@/lib/constants";
 
 export default function ProgramsSection() {
 

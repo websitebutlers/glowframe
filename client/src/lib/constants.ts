@@ -43,6 +43,41 @@ export const WORKSHOP_CATEGORIES = [
   }
 ];
 
+export const PREVIOUS_WORKSHOPS = [
+  {
+    id: 'intro-filmmaking-fall23',
+    title: 'Introduction to Filmmaking',
+    description: 'A comprehensive 3-day workshop covering the fundamentals of film production, from pre-production planning to post-production editing. Students created their first short films under professional mentorship.',
+    completedDate: 'October 2023',
+    participants: 18,
+    image: 'https://images.unsplash.com/photo-1489599387497-7c4a6760cf62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
+  },
+  {
+    id: 'audio-basics-summer23',
+    title: 'Audio Production Fundamentals',
+    description: 'Hands-on training in live sound mixing, podcast production, and studio recording techniques. Participants worked with industry-standard equipment and software.',
+    completedDate: 'August 2023',
+    participants: 12,
+    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
+  },
+  {
+    id: 'content-creator-spring23',
+    title: 'Digital Content Creation',
+    description: 'A 2-week intensive focused on social media content creation, video editing, and brand storytelling. Students launched their own content channels by the end of the program.',
+    completedDate: 'May 2023',
+    participants: 24,
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
+  },
+  {
+    id: 'lighting-workshop-winter23',
+    title: 'Professional Lighting Workshop',
+    description: 'Advanced lighting techniques for film and photography. Students learned to work with LED panels, gels, and professional grip equipment on real film sets.',
+    completedDate: 'February 2023',
+    participants: 15,
+    image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400'
+  }
+];
+
 export const DONATION_AMOUNTS = [
   { value: 25, description: 'Workshop materials for one student' },
   { value: 100, description: 'Equipment access for one month' },
