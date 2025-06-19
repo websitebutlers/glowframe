@@ -13,7 +13,7 @@ export default function Navigation() {
     { href: "/programs", label: "Programs" },
     { href: "/community", label: "Community" },
     { href: "/resources", label: "Resources" },
-    { href: "/events", label: "News/Events" },
+    { href: "/events", label: "Events" },
     { href: "/get-involved", label: "Get Involved" },
   ];
 
