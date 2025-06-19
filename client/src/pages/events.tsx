@@ -116,7 +116,7 @@ export default function Events() {
         <section className="py-24 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Events</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">News & Events</h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Join us for workshops, screenings, and community events that bring together aspiring filmmakers and industry professionals.
               </p>
