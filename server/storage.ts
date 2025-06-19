@@ -20,17 +20,25 @@ export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private applications: Map<number, Application>;
   private donations: Map<number, Donation>;
+  private mailingListEntries: Map<number, MailingList>;
+  private apprenticeInquiries: Map<number, ApprenticeInquiry>;
   private currentUserId: number;
   private currentApplicationId: number;
   private currentDonationId: number;
+  private currentMailingListId: number;
+  private currentApprenticeInquiryId: number;
 
   constructor() {
     this.users = new Map();
     this.applications = new Map();
     this.donations = new Map();
+    this.mailingListEntries = new Map();
+    this.apprenticeInquiries = new Map();
     this.currentUserId = 1;
     this.currentApplicationId = 1;
     this.currentDonationId = 1;
+    this.currentMailingListId = 1;
+    this.currentApprenticeInquiryId = 1;
   }
 
   async getUser(id: number): Promise<User | undefined> {
@@ -111,6 +119,21 @@ export class MemStorage implements IStorage {
     // Not implemented for MemStorage - using database storage
     throw new Error("MemStorage not implemented for apprentice inquiries");
   }
+
+  async createMailingListEntry(insertEntry: InsertMailingList): Promise<MailingList> {
+    const id = this.currentMailingListId++;
+    const entry: MailingList = { 
+      ...insertEntry, 
+      id, 
+      createdAt: new Date() 
+    };
+    this.mailingListEntries.set(id, entry);
+    return entry;
+  }
+
+  async getMailingList(): Promise<MailingList[]> {
+    return Array.from(this.mailingListEntries.values());
+  }
 }
 
 export class DatabaseStorage implements IStorage {
@@ -174,6 +197,18 @@ export class DatabaseStorage implements IStorage {
 
   async getApprenticeInquiries(): Promise<ApprenticeInquiry[]> {
     return await db.select().from(apprenticeInquiries);
+  }
+
+  async createMailingListEntry(insertEntry: InsertMailingList): Promise<MailingList> {
+    const [entry] = await db
+      .insert(mailingList)
+      .values(insertEntry)
+      .returning();
+    return entry;
+  }
+
+  async getMailingList(): Promise<MailingList[]> {
+    return await db.select().from(mailingList);
   }
 }
 

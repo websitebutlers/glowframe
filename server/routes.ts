@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import Stripe from "stripe";
 import { storage } from "./storage";
-import { insertApplicationSchema, insertDonationSchema } from "@shared/schema";
+import { insertApplicationSchema, insertDonationSchema, insertMailingListSchema, insertApprenticeInquirySchema } from "@shared/schema";
 
 const stripe = process.env.STRIPE_SECRET_KEY 
   ? new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: "2025-05-28.basil" })
@@ -132,6 +132,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(400).json({ 
         success: false,
         message: "Webhook error: " + error.message 
+      });
+    }
+  });
+
+  // Mailing list subscription endpoint
+  app.post("/api/mailing-list", async (req, res) => {
+    try {
+      const validatedData = insertMailingListSchema.parse(req.body);
+      const entry = await storage.createMailingListEntry(validatedData);
+      res.json({ success: true, entry });
+    } catch (error: any) {
+      res.status(400).json({ 
+        success: false, 
+        message: "Invalid mailing list data", 
+        error: error.message 
+      });
+    }
+  });
+
+  // Get mailing list endpoint (for admin)
+  app.get("/api/mailing-list", async (req, res) => {
+    try {
+      const mailingList = await storage.getMailingList();
+      res.json({ success: true, mailingList });
+    } catch (error: any) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to retrieve mailing list", 
+        error: error.message 
       });
     }
   });
