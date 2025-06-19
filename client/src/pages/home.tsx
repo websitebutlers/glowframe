@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Footer from "@/components/footer";
+import businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc from "@assets/Media/Site Images/businessman-pointing-at-digital-information-board-2025-04-05-04-11-46-utc.jpg";
 
 export default function Home() {
   return (
@@ -114,6 +115,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Static Images Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="flex justify-center">
+              <img 
+                src={businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc}
+                alt="Businessman pointing at digital information board" 
+                className="rounded-lg shadow-lg max-w-full h-auto object-contain"
+              />
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/images/selective-focus-of-multicultural-young-actor-and-a-2024-11-10-13-08-28-utc.jpg"
+                alt="Selective focus of multicultural young actor" 
+                className="rounded-lg shadow-lg max-w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

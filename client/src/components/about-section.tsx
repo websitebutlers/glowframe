@@ -145,25 +145,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Static Images Section */}
-        <div className="mt-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="flex justify-center">
-              <img 
-                src={businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc}
-                alt="Businessman pointing at digital information board" 
-                className="rounded-lg shadow-lg max-w-full h-auto object-contain"
-              />
-            </div>
-            <div className="flex justify-center">
-              <img 
-                src="/images/selective-focus-of-multicultural-young-actor-and-a-2024-11-10-13-08-28-utc.jpg"
-                alt="Selective focus of multicultural young actor" 
-                className="rounded-lg shadow-lg max-w-full h-auto object-contain"
-              />
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );
