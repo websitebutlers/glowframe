@@ -3,7 +3,110 @@ import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useState } from "react";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
+
+function MailingListForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+
+  const submitMailingList = useMutation({
+    mutationFn: async (data: { name: string; email: string }) => {
+      const response = await apiRequest("POST", "/api/mailing-list", data);
+      if (!response.ok) {
+        throw new Error("Failed to join mailing list");
+      }
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Welcome to our mailing list!",
+        description: "You'll be the first to know about upcoming workshops and events.",
+      });
+      setName("");
+      setEmail("");
+      queryClient.invalidateQueries({ queryKey: ["/api/mailing-list"] });
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Error joining mailing list",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!name.trim()) {
+      toast({
+        title: "Name Required",
+        description: "Please enter your name.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!email.trim()) {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    submitMailingList.mutate({ name: name.trim(), email: email.trim() });
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <Label htmlFor="mailing-name" className="text-sm font-medium mb-2 block">
+          Your Name
+        </Label>
+        <Input
+          id="mailing-name"
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="bg-black border-gray-700 focus:border-electric-blue"
+        />
+      </div>
+      
+      <div>
+        <Label htmlFor="mailing-email" className="text-sm font-medium mb-2 block">
+          Your Email
+        </Label>
+        <Input
+          id="mailing-email"
+          type="email"
+          placeholder="Enter your email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="bg-black border-gray-700 focus:border-electric-blue"
+        />
+      </div>
+
+      <Button
+        type="submit"
+        disabled={submitMailingList.isPending}
+        className="w-full bg-electric-blue text-black hover:bg-blue-400 font-bold"
+      >
+        {submitMailingList.isPending ? "Joining..." : "Join Mailing List"}
+      </Button>
+    </form>
+  );
+}
 
 export default function Events() {
   return (
@@ -96,15 +199,13 @@ export default function Events() {
             </div>
 
             <div className="text-center">
-              <Card className="bg-gray-900 border-gray-800 p-8 inline-block">
+              <Card className="bg-gray-900 border-gray-800 p-8 inline-block max-w-md mx-auto">
                 <CardContent className="pt-6">
                   <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-                  <p className="text-gray-300 mb-6 max-w-md">
+                  <p className="text-gray-300 mb-6">
                     More workshops and events are being planned. Join our mailing list to be the first to know about upcoming dates and registration.
                   </p>
-                  <Button className="bg-electric-blue text-black hover:bg-blue-400 font-bold">
-                    Join Mailing List
-                  </Button>
+                  <MailingListForm />
                 </CardContent>
               </Card>
             </div>

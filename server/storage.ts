@@ -1,4 +1,4 @@
-import { users, applications, donations, apprenticeInquiries, type User, type InsertUser, type Application, type InsertApplication, type Donation, type InsertDonation, type ApprenticeInquiry, type InsertApprenticeInquiry } from "@shared/schema";
+import { users, applications, donations, apprenticeInquiries, mailingList, type User, type InsertUser, type Application, type InsertApplication, type Donation, type InsertDonation, type ApprenticeInquiry, type InsertApprenticeInquiry, type MailingList, type InsertMailingList } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
@@ -12,6 +12,8 @@ export interface IStorage {
   updateDonationStatus(id: number, status: string, stripePaymentIntentId?: string): Promise<Donation | undefined>;
   createApprenticeInquiry(inquiry: InsertApprenticeInquiry): Promise<ApprenticeInquiry>;
   getApprenticeInquiries(): Promise<ApprenticeInquiry[]>;
+  createMailingListEntry(entry: InsertMailingList): Promise<MailingList>;
+  getMailingList(): Promise<MailingList[]>;
 }
 
 export class MemStorage implements IStorage {

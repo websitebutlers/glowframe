@@ -56,6 +56,13 @@ export const apprenticeInquiries = pgTable("apprentice_inquiries", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const mailingList = pgTable("mailing_list", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull().unique(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const insertApplicationSchema = createInsertSchema(applications).omit({
   id: true,
   createdAt: true,
@@ -78,6 +85,11 @@ export const insertApprenticeInquirySchema = createInsertSchema(apprenticeInquir
   createdAt: true,
 });
 
+export const insertMailingListSchema = createInsertSchema(mailingList).omit({
+  id: true,
+  createdAt: true,
+});
+
 export type InsertApplication = z.infer<typeof insertApplicationSchema>;
 export type Application = typeof applications.$inferSelect;
 export type InsertDonation = z.infer<typeof insertDonationSchema>;
@@ -86,3 +98,5 @@ export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertApprenticeInquiry = z.infer<typeof insertApprenticeInquirySchema>;
 export type ApprenticeInquiry = typeof apprenticeInquiries.$inferSelect;
+export type InsertMailingList = z.infer<typeof insertMailingListSchema>;
+export type MailingList = typeof mailingList.$inferSelect;
