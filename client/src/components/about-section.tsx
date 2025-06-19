@@ -9,7 +9,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Mission</h2>
-            <p className="text-lg mb-6 leading-relaxed text-gray-300">Mission Statement: The Glow-Frame Initiative is a 501(c)(3) nonprofit organization dedicated to empowering individuals from underserved communities through real-world training in the film and audiovisual industries.</p>
+            <p className="text-lg mb-6 leading-relaxed text-gray-300">The Glow-Frame Initiative is a 501(c)(3) nonprofit organization dedicated to empowering individuals from underserved communities through real-world training in the film and audiovisual industries.</p>
             <p className="text-lg mb-6 leading-relaxed text-gray-300">We offer programs for emerging creatives as well as specialized initiatives for veterans. Our comprehensive apprenticeship model provides hands-on experience on active film sets and live events.</p>
             <p className="text-lg mb-8 leading-relaxed text-gray-300">Guided by our FRAME pillars—Film, Recording Arts, Music, and Education—we blend technical skill-building with artistic development to prepare participants for creative, sustainable careers.</p>
             <Link href="/programs">
