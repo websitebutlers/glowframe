@@ -12,12 +12,8 @@ export default function AboutSection() {
             <p className="text-lg mb-6 leading-relaxed text-gray-300">
               The Glow-Frame Initiative is a 501(c)(3) non-profit organization dedicated to empowering young adults from underserved communities in Arizona by providing them with real-world experience in the film and AV industries.
             </p>
-            <p className="text-lg mb-6 leading-relaxed text-gray-300">
-              Our comprehensive apprenticeship program is designed for individuals aged 16-24, offering hands-on training on actual film sets and behind the scenes at live events.
-            </p>
-            <p className="text-lg mb-8 leading-relaxed text-gray-300">
-              From LED video wall technology and live sound engineering to cinematography and film production, we tailor our training to the interests of each participant, equipping them with the skills they need to succeed.
-            </p>
+            
+            
             <Link href="/programs">
               <Button className="bg-glow-gold text-black px-6 py-3 font-bold hover:bg-yellow-400 transition-colors duration-200">
                 Learn More About Our Programs
