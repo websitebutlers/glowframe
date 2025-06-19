@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
-import businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc from "@assets/businessman-pointing-at-digital-information-board-2025-04-05-04-11-46-utc.jpg";
+import businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc from "@assets/Media/Site Images/businessman-pointing-at-digital-information-board-2025-04-05-04-11-46-utc.jpg";
 
 export default function AboutSection() {
 
@@ -141,6 +141,26 @@ export default function AboutSection() {
               <h3 className="text-xl font-bold mb-2">Raquel Battle</h3>
               <p className="text-white font-semibold mb-2">Outreach & Event Coordinator</p>
               <p className="text-gray-300 text-sm">Community engagement and event management excellence</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Static Images Section */}
+        <div className="mt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="flex justify-center">
+              <img 
+                src={businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc}
+                alt="Businessman pointing at digital information board" 
+                className="rounded-lg shadow-lg max-w-full h-auto object-contain"
+              />
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/images/selective-focus-of-sound-mixing-console-2025-03-16-00-39-51-utc.jpg"
+                alt="Selective focus of sound mixing console" 
+                className="rounded-lg shadow-lg max-w-full h-auto object-contain"
+              />
             </div>
           </div>
         </div>
