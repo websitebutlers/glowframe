@@ -1,4 +1,4 @@
-import { users, applications, donations, type User, type InsertUser, type Application, type InsertApplication, type Donation, type InsertDonation } from "@shared/schema";
+import { users, applications, donations, apprenticeInquiries, type User, type InsertUser, type Application, type InsertApplication, type Donation, type InsertDonation, type ApprenticeInquiry, type InsertApprenticeInquiry } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
@@ -10,6 +10,8 @@ export interface IStorage {
   getApplications(): Promise<Application[]>;
   createDonation(donation: InsertDonation): Promise<Donation>;
   updateDonationStatus(id: number, status: string, stripePaymentIntentId?: string): Promise<Donation | undefined>;
+  createApprenticeInquiry(inquiry: InsertApprenticeInquiry): Promise<ApprenticeInquiry>;
+  getApprenticeInquiries(): Promise<ApprenticeInquiry[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -96,6 +98,16 @@ export class MemStorage implements IStorage {
       return donation;
     }
     return undefined;
+  }
+
+  async createApprenticeInquiry(insertInquiry: InsertApprenticeInquiry): Promise<ApprenticeInquiry> {
+    // Not implemented for MemStorage - using database storage
+    throw new Error("MemStorage not implemented for apprentice inquiries");
+  }
+
+  async getApprenticeInquiries(): Promise<ApprenticeInquiry[]> {
+    // Not implemented for MemStorage - using database storage
+    throw new Error("MemStorage not implemented for apprentice inquiries");
   }
 }
 

@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
+import businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc from "@assets/businessman-pointing-at-digital-information-board-2025-04-05-04-11-46-utc.jpg";
+
 export default function AboutSection() {
 
   return (
@@ -40,7 +42,7 @@ export default function AboutSection() {
             />
             {/* Sound professionals working in studio environment */}
             <img 
-              src="/images/sound-professionals-2025-03-16-23-48-18-utc.jpg" 
+              src={businessman_pointing_at_digital_information_board_2025_04_05_04_11_46_utc} 
               alt="Sound professionals working in studio environment" 
               className="rounded-lg shadow-lg w-full object-contain bg-gray-900"
             />

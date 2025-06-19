@@ -41,6 +41,21 @@ export const donations = pgTable("donations", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const apprenticeInquiries = pgTable("apprentice_inquiries", {
+  id: serial("id").primaryKey(),
+  fullName: text("full_name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  ageRange: text("age_range").notNull(),
+  interests: text("interests").array().notNull(),
+  experience: text("experience"),
+  goals: text("goals"),
+  hearAbout: text("hear_about"),
+  mailingList: boolean("mailing_list").default(false),
+  termsAccepted: boolean("terms_accepted").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const insertApplicationSchema = createInsertSchema(applications).omit({
   id: true,
   createdAt: true,
@@ -58,9 +73,16 @@ export const insertUserSchema = createInsertSchema(users).pick({
   password: true,
 });
 
+export const insertApprenticeInquirySchema = createInsertSchema(apprenticeInquiries).omit({
+  id: true,
+  createdAt: true,
+});
+
 export type InsertApplication = z.infer<typeof insertApplicationSchema>;
 export type Application = typeof applications.$inferSelect;
 export type InsertDonation = z.infer<typeof insertDonationSchema>;
 export type Donation = typeof donations.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
+export type InsertApprenticeInquiry = z.infer<typeof insertApprenticeInquirySchema>;
+export type ApprenticeInquiry = typeof apprenticeInquiries.$inferSelect;
