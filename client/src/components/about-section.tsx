@@ -157,8 +157,8 @@ export default function AboutSection() {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/images/selective-focus-of-sound-mixing-console-2025-03-16-00-39-51-utc.jpg"
-                alt="Selective focus of sound mixing console" 
+                src="/images/selective-focus-of-multicultural-young-actor-and-a-2024-11-10-13-08-28-utc.jpg"
+                alt="Selective focus of multicultural young actor" 
                 className="rounded-lg shadow-lg max-w-full h-auto object-contain"
               />
             </div>
