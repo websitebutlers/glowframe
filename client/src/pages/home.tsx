@@ -2,7 +2,6 @@ import Navigation from "@/components/navigation";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Footer from "@/components/footer";
-import DonationSection from "@/components/donation-section";
 
 export default function Home() {
   return (
@@ -115,9 +114,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      <DonationSection />
-      
       <Footer />
     </div>
   );
