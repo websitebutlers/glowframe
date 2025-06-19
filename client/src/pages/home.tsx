@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
-      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Professional video camera setup with dramatic lighting in a film studio */}
@@ -26,9 +25,7 @@ export default function Home() {
             <div className="text-xl md:text-2xl tracking-widest mt-2">INITIATIVE</div>
           </div>
           
-          <p className="text-xl md:text-2xl mb-8 leading-relaxed text-shadow">
-            Empowering young adults from underserved communities in Arizona with real-world experience in film and AV industries
-          </p>
+          <p className="text-xl md:text-2xl mb-8 leading-relaxed text-shadow">Empowering the Next Generation</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/programs">
@@ -51,7 +48,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Mission Statement */}
       <section className="relative py-24">
         <div 
@@ -77,7 +73,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
       {/* Call to Action */}
       <section className="py-24 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,7 +115,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

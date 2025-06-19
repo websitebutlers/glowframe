@@ -72,12 +72,14 @@ The application is configured for Replit's autoscale deployment:
 
 ## Recent Changes
 
-### Image Display and User Experience Optimization (June 19, 2025)
+### User Experience and Navigation (June 19, 2025)
 - ✓ Fixed all image loading issues by copying proprietary assets to public directory
 - ✓ Updated workshop fliers to display complete content without cropping using object-contain
 - ✓ Improved Programs page layout to show full fliers alongside detailed workshop information
 - ✓ Enhanced scrollable design - users can view complete content without clicking for enlargement
 - ✓ Applied IMG_6436.jpeg as background for Mission Statement section with proper overlay
+- ✓ Added privacy disclaimer to application form with clear data usage policies
+- ✓ Implemented automatic scroll-to-top functionality for all page navigation
 - ✓ Optimized all site images for better visibility and user experience
 
 ### Database Integration (June 19, 2025)
