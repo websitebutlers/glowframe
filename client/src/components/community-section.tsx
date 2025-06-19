@@ -48,7 +48,7 @@ export default function CommunitySection() {
           <img 
             src="/images/two-performers-sitting-on-floor-in-theater-2025-03-10-05-13-22-utc.jpg" 
             alt="Theater performers collaborating on production" 
-            className="w-full h-64 object-cover rounded-lg mb-6"
+            className="w-full object-contain bg-gray-900 rounded-lg mb-6"
           />
           <h3 className="text-3xl font-bold mb-4">Building Tomorrow's Storytellers</h3>
           <p className="text-xl text-gray-300 leading-relaxed">

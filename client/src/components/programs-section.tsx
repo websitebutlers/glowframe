@@ -30,14 +30,15 @@ export default function ProgramsSection() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-12">
             {PREVIOUS_WORKSHOPS.map((workshop) => (
-              <Card key={workshop.id} className="border border-gray-800 bg-card hover:border-electric-blue transition-colors duration-300 overflow-hidden">
+              <div key={workshop.id} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                {/* Workshop Flier */}
                 <div className="relative">
                   <img 
                     src={workshop.image} 
                     alt={workshop.title}
-                    className="w-full h-48 object-cover hover:scale-105 transition-all duration-300"
+                    className="w-full object-contain bg-gray-900 rounded-lg shadow-lg"
                   />
                   <div className="absolute top-4 right-4">
                     <Badge variant="secondary" className="bg-electric-blue/20 text-electric-blue border border-electric-blue/30">
@@ -46,27 +47,30 @@ export default function ProgramsSection() {
                   </div>
                 </div>
                 
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold">{workshop.title}</CardTitle>
-                  <p className="text-electric-blue font-semibold text-sm">{workshop.completedDate}</p>
-                  <p className="text-glow-gold font-medium text-sm">{workshop.instructor}</p>
-                </CardHeader>
-                
-                <CardContent>
-                  <CardDescription className="text-gray-300 mb-4 leading-relaxed text-sm">
-                    {workshop.description}
-                  </CardDescription>
-                  <div className="flex flex-wrap gap-2 text-xs text-gray-400">
-                    <span className="bg-gray-800 px-2 py-1 rounded">📍 {workshop.location}</span>
-                    {workshop.maxStudents && (
-                      <span className="bg-gray-800 px-2 py-1 rounded">👥 Max {workshop.maxStudents}</span>
-                    )}
-                    {workshop.partner && (
-                      <span className="bg-gray-800 px-2 py-1 rounded">🤝 {workshop.partner}</span>
-                    )}
+                {/* Workshop Details */}
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-2xl font-bold mb-2">{workshop.title}</h4>
+                    <p className="text-electric-blue font-semibold mb-1">{workshop.completedDate}</p>
+                    <p className="text-glow-gold font-medium mb-4">{workshop.instructor}</p>
                   </div>
-                </CardContent>
-              </Card>
+                  
+                  <div>
+                    <p className="text-gray-300 mb-4 leading-relaxed">
+                      {workshop.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 text-sm text-gray-400">
+                      <span className="bg-gray-800 px-3 py-1 rounded">📍 {workshop.location}</span>
+                      {workshop.maxStudents && (
+                        <span className="bg-gray-800 px-3 py-1 rounded">👥 Max {workshop.maxStudents}</span>
+                      )}
+                      {workshop.partner && (
+                        <span className="bg-gray-800 px-3 py-1 rounded">🤝 {workshop.partner}</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

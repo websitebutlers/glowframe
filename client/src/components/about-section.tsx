@@ -19,30 +19,30 @@ export default function AboutSection() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Audio production collaboration in professional studio */}
             <img 
               src="/images/collaborating-in-music-studio-with-audio-equipment-2025-03-16-05-21-25-utc.jpg" 
               alt="Audio production collaboration in professional studio" 
-              className="rounded-lg shadow-lg object-cover h-48"
+              className="rounded-lg shadow-lg w-full object-contain bg-gray-900"
             />
             {/* Professional camera operator setting up equipment */}
             <img 
               src="/images/operator-setting-his-camera-before-shooting-2025-03-18-22-10-20-utc.jpg" 
               alt="Professional camera operator setting up equipment" 
-              className="rounded-lg shadow-lg object-cover h-48"
+              className="rounded-lg shadow-lg w-full object-contain bg-gray-900"
             />
             {/* Live event camera crew capturing production */}
             <img 
               src="/images/cameramen-capturing-moments-at-a-live-event-2025-02-10-06-55-51-utc.jpg" 
               alt="Live event camera crew capturing production" 
-              className="rounded-lg shadow-lg object-cover h-48"
+              className="rounded-lg shadow-lg w-full object-contain bg-gray-900"
             />
             {/* Sound professionals working in studio environment */}
             <img 
               src="/images/sound-professionals-2025-03-16-23-48-18-utc.jpg" 
               alt="Sound professionals working in studio environment" 
-              className="rounded-lg shadow-lg object-cover h-48"
+              className="rounded-lg shadow-lg w-full object-contain bg-gray-900"
             />
           </div>
         </div>
