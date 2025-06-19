@@ -25,7 +25,7 @@ export default function Home() {
             <div className="text-xl md:text-2xl tracking-widest mt-2">INITIATIVE</div>
           </div>
           
-          <p className="text-xl md:text-2xl mb-2 leading-relaxed text-shadow">Empowering the Next Generation</p>
+          <p className="md:text-2xl mb-2 text-shadow text-[32px] font-bold">Empowering the Next Generation</p>
           <p className="text-lg md:text-xl mb-8 text-gray-300 tracking-wide">Film. Recording. Arts. Music. Education.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
