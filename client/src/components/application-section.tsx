@@ -121,17 +121,17 @@ export default function ApplicationSection() {
     <section id="apply" className="py-24 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Join Our Program</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Partner With Us</h2>
           <p className="text-xl text-gray-300">
-            Ready to take the next step in your creative career? Apply for our workshops and apprenticeship program.
+            Looking to connect with emerging talent? Partner with Glow Frame Initiative to access a diverse pipeline of skilled professionals ready to contribute to your productions and grow Arizona's creative economy.
           </p>
         </div>
 
         <Card className="bg-gray-900 border-gray-800">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold">Participant Application</CardTitle>
+            <CardTitle className="text-2xl font-bold">Industry Partnership Application</CardTitle>
             <p className="text-gray-300">
-              Complete this application to join the Glow-Frame Initiative. This comprehensive program is designed for individuals aged 16-24, offering hands-on training on actual film sets and behind the scenes at live events.
+              Join our network of industry partners and help shape the future of Arizona's creative workforce. Connect with our trained professionals aged 16-24 who bring fresh perspectives, technical skills, and hands-on experience from real film sets and live events.
             </p>
             
             {/* Privacy Disclaimer */}
@@ -501,7 +501,7 @@ export default function ApplicationSection() {
                     className="bg-glow-gold text-black px-8 py-4 text-lg font-bold hover:bg-yellow-400 transition-colors duration-200"
                     size="lg"
                   >
-                    {submitApplication.isPending ? "Submitting..." : "Submit Application"}
+                    {submitApplication.isPending ? "Submitting..." : "Submit Partnership Application"}
                   </Button>
                 </div>
               </form>
