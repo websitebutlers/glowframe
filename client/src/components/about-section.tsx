@@ -142,6 +142,33 @@ export default function AboutSection() {
               <p className="text-white font-semibold mb-2">Outreach & Event Coordinator</p>
               <p className="text-gray-300 text-sm">Community engagement and event management excellence</p>
             </div>
+
+            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+              <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">D'Aaron Battle</h3>
+              <p className="text-white font-semibold mb-2">Director of Community Programming</p>
+              <p className="text-gray-300 text-sm">Developing and managing community-focused educational initiatives</p>
+            </div>
+
+            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+              <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">John Diaz</h3>
+              <p className="text-white font-semibold mb-2">Content Specialist/Instructor</p>
+              <p className="text-gray-300 text-sm">Expert instruction and curriculum development for hands-on learning</p>
+            </div>
+
+            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+              <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Ruben "Fleek" Anderson</h3>
+              <p className="text-white font-semibold mb-2">Director of Marketing</p>
+              <p className="text-gray-300 text-sm">Strategic marketing and brand development for organizational growth</p>
+            </div>
           </div>
         </div>
 
