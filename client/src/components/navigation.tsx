@@ -46,7 +46,7 @@ export default function Navigation() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/get-involved">
+              <Link href="/#donate">
                 <Button className="bg-glow-gold text-black hover:bg-yellow-400 font-bold">
                   Donate
                 </Button>
@@ -85,7 +85,7 @@ export default function Navigation() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/get-involved" onClick={() => setIsOpen(false)}>
+              <Link href="/#donate" onClick={() => setIsOpen(false)}>
                 <Button className="bg-glow-gold text-black hover:bg-yellow-400 font-bold w-full mt-4">
                   Donate
                 </Button>
