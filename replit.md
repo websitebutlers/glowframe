@@ -1,8 +1,8 @@
-# Glow Frame Initiative - Application Platform
+# Glow Frame Initiative Website
 
 ## Overview
 
-The Glow Frame Initiative is a modern web application built for a 501(c)(3) non-profit organization dedicated to empowering young adults from underserved communities in Arizona through film and AV industry training. The platform serves as both an informational website and application portal for workshop programs, with integrated donation processing capabilities.
+A sophisticated website for the Glow Frame Initiative following ghettofilm.org's design patterns with dark minimalist aesthetic, multimedia showcases, and comprehensive program information. The platform serves as both an informational website and application portal for workshop programs, with integrated donation processing capabilities for the 501(c)(3) non-profit organization dedicated to empowering young adults from underserved communities in Arizona through film and AV industry training.
 
 ## System Architecture
 
@@ -70,12 +70,28 @@ The application is configured for Replit's autoscale deployment:
 - **Database**: PostgreSQL module provides managed database instance
 - **Environment**: Production and development configurations with appropriate middleware
 
-## Changelog
+## Recent Changes
 
-```
-Changelog:
-- June 19, 2025. Initial setup
-```
+### Design Implementation (June 19, 2025)
+- ✓ Implemented ghettofilm.org-inspired dark minimalist design with black backgrounds and white typography
+- ✓ Added Glow Frame logo styling with bordered rectangular frame aesthetic
+- ✓ Integrated golden yellow (#FFD700) and electric blue (#00BFFF) accent colors from blueprint specifications
+- ✓ Applied Montserrat font family throughout for modern geometric look
+- ✓ Created responsive navigation with smooth scrolling between sections
+
+### Content Structure (June 19, 2025)
+- ✓ Built comprehensive homepage with hero, about, programs, community, application, and donation sections
+- ✓ Integrated workshop categories: Content Creation, Audio Production, AV Staging, Camera & Lighting, Grip & Electric, Filmmaking
+- ✓ Added comprehensive application form with demographics, interests, and goals tracking
+- ✓ Implemented sponsor recognition section with project partners
+- ✓ Created equipment donation information alongside financial donations
+
+### Technical Foundation (June 19, 2025)
+- ✓ Set up React frontend with TypeScript and Wouter routing
+- ✓ Implemented Express.js backend with in-memory storage
+- ✓ Added Stripe integration framework (requires API keys for activation)
+- ✓ Built form validation with React Hook Form and Zod schemas
+- ✓ Configured responsive design with Tailwind CSS and shadcn/ui components
 
 ## User Preferences
 

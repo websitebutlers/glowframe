@@ -165,7 +165,7 @@ export default function DonationSection() {
     setSelectedAmount(null);
   };
 
-  if (showPayment && clientSecret) {
+  if (showPayment && clientSecret && stripePromise) {
     return (
       <section id="donate" className="py-24 bg-gray-900">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
