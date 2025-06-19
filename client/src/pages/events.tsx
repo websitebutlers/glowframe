@@ -12,99 +12,22 @@ import { useState } from "react";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 
 function MailingListForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const { toast } = useToast();
-  const queryClient = useQueryClient();
-
-  const submitMailingList = useMutation({
-    mutationFn: async (data: { name: string; email: string }) => {
-      const response = await apiRequest("POST", "/api/mailing-list", data);
-      if (!response.ok) {
-        throw new Error("Failed to join mailing list");
-      }
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Welcome to our mailing list!",
-        description: "You'll be the first to know about upcoming workshops and events.",
-      });
-      setName("");
-      setEmail("");
-      queryClient.invalidateQueries({ queryKey: ["/api/mailing-list"] });
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Error joining mailing list",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!name.trim()) {
-      toast({
-        title: "Name Required",
-        description: "Please enter your name.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (!email.trim()) {
-      toast({
-        title: "Email Required",
-        description: "Please enter your email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    submitMailingList.mutate({ name: name.trim(), email: email.trim() });
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <Label htmlFor="mailing-name" className="text-sm font-medium mb-2 block">
-          Your Name
-        </Label>
-        <Input
-          id="mailing-name"
-          type="text"
-          placeholder="Enter your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="bg-black border-gray-700 focus:border-electric-blue"
-        />
-      </div>
-      
-      <div>
-        <Label htmlFor="mailing-email" className="text-sm font-medium mb-2 block">
-          Your Email
-        </Label>
-        <Input
-          id="mailing-email"
-          type="email"
-          placeholder="Enter your email address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="bg-black border-gray-700 focus:border-electric-blue"
-        />
-      </div>
-
-      <Button
-        type="submit"
-        disabled={submitMailingList.isPending}
-        className="w-full bg-electric-blue text-black hover:bg-blue-400 font-bold"
+    <div className="text-center space-y-4">
+      <a 
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdDXuIQXUE9DUWWwovqC8JdzrWEERCSei1nDCU5zREbOsYRIQ/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block"
       >
-        {submitMailingList.isPending ? "Joining..." : "Join Mailing List"}
-      </Button>
-    </form>
+        <Button className="w-full bg-electric-blue text-black hover:bg-blue-400 font-bold">
+          Join Mailing List
+        </Button>
+      </a>
+      <p className="text-xs text-gray-400">
+        Opens in a new window • Secure Google Form
+      </p>
+    </div>
   );
 }
 
