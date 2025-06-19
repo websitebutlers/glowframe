@@ -2,15 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import { WORKSHOP_CATEGORIES } from "@/lib/constants";
 
 export default function ProgramsSection() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="programs" className="py-24 bg-black">
@@ -51,13 +46,14 @@ export default function ProgramsSection() {
                 </CardDescription>
                 
                 {workshop.status === 'available' ? (
-                  <Button
-                    onClick={() => scrollToSection("#apply")}
-                    variant="link"
-                    className="text-electric-blue hover:text-blue-300 p-0 h-auto font-semibold"
-                  >
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link href="/get-involved">
+                    <Button
+                      variant="link"
+                      className="text-electric-blue hover:text-blue-300 p-0 h-auto font-semibold"
+                    >
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 ) : (
                   <span className="text-sophisticated-gray font-semibold">Coming Soon</span>
                 )}

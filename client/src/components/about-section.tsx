@@ -1,12 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function AboutSection() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="about" className="py-24 bg-gray-900">
@@ -23,12 +18,11 @@ export default function AboutSection() {
             <p className="text-lg mb-8 leading-relaxed text-gray-300">
               From LED video wall technology and live sound engineering to cinematography and film production, we tailor our training to the interests of each participant, equipping them with the skills they need to succeed.
             </p>
-            <Button
-              onClick={() => scrollToSection("#programs")}
-              className="bg-glow-gold text-black px-6 py-3 font-bold hover:bg-yellow-400 transition-colors duration-200"
-            >
-              Learn More About Our Programs
-            </Button>
+            <Link href="/programs">
+              <Button className="bg-glow-gold text-black px-6 py-3 font-bold hover:bg-yellow-400 transition-colors duration-200">
+                Learn More About Our Programs
+              </Button>
+            </Link>
           </div>
           
           <div className="grid grid-cols-2 gap-4">

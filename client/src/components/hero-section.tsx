@@ -1,13 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function HeroSection() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center">
       {/* Professional video camera setup with dramatic lighting in a film studio */}
@@ -31,21 +25,23 @@ export default function HeroSection() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            onClick={() => scrollToSection("#programs")}
-            className="bg-glow-gold text-black px-8 py-4 text-lg font-bold hover:bg-yellow-400 transition-colors duration-200"
-            size="lg"
-          >
-            Explore Programs
-          </Button>
-          <Button
-            onClick={() => scrollToSection("#apply")}
-            variant="outline"
-            className="border-2 border-white px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors duration-200"
-            size="lg"
-          >
-            Get Involved
-          </Button>
+          <Link href="/programs">
+            <Button
+              className="bg-glow-gold text-black px-8 py-4 text-lg font-bold hover:bg-yellow-400 transition-colors duration-200"
+              size="lg"
+            >
+              Explore Programs
+            </Button>
+          </Link>
+          <Link href="/get-involved">
+            <Button
+              variant="outline"
+              className="border-2 border-white px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors duration-200"
+              size="lg"
+            >
+              Get Involved
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

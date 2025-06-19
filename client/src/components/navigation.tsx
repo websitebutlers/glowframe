@@ -72,20 +72,24 @@ export default function Navigation() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-sm">
               {navItems.map((item) => (
-                <button
+                <Link
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block text-white hover:text-glow-gold px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200 ${
+                    location === item.href 
+                      ? 'text-glow-gold' 
+                      : 'text-white hover:text-glow-gold'
+                  }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
-              <Button
-                onClick={() => scrollToSection("#donate")}
-                className="bg-glow-gold text-black hover:bg-yellow-400 font-bold w-full mt-4"
-              >
-                Donate
-              </Button>
+              <Link href="/get-involved" onClick={() => setIsOpen(false)}>
+                <Button className="bg-glow-gold text-black hover:bg-yellow-400 font-bold w-full mt-4">
+                  Donate
+                </Button>
+              </Link>
             </div>
           </div>
         )}
