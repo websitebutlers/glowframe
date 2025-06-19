@@ -60,9 +60,7 @@ export default function Home() {
         </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Mission</h2>
-          <p className="text-xl leading-relaxed text-gray-300 mb-8">
-            We foster a diverse and inclusive workforce in Arizona's film and AV sectors, promoting economic growth and authentic storytelling that reflects the rich diversity of our community.
-          </p>
+          <p className="text-xl leading-relaxed text-gray-300 mb-8">The Glow-Frame Initiative is a 501(c)(3) nonprofit organization dedicated to empowering individuals from underserved communities through real-world training in the film and audiovisual industries.</p>
           <Link href="/about">
             <Button
               variant="link"
