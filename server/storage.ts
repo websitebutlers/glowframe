@@ -1,4 +1,6 @@
 import { users, applications, donations, type User, type InsertUser, type Application, type InsertApplication, type Donation, type InsertDonation } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -97,4 +99,56 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+export class DatabaseStorage implements IStorage {
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  async createApplication(insertApplication: InsertApplication): Promise<Application> {
+    const [application] = await db
+      .insert(applications)
+      .values(insertApplication)
+      .returning();
+    return application;
+  }
+
+  async getApplications(): Promise<Application[]> {
+    return await db.select().from(applications);
+  }
+
+  async createDonation(insertDonation: InsertDonation): Promise<Donation> {
+    const [donation] = await db
+      .insert(donations)
+      .values({ ...insertDonation, status: 'pending' })
+      .returning();
+    return donation;
+  }
+
+  async updateDonationStatus(id: number, status: string, stripePaymentIntentId?: string): Promise<Donation | undefined> {
+    const [donation] = await db
+      .update(donations)
+      .set({ 
+        status, 
+        stripePaymentIntentId
+      })
+      .where(eq(donations.id, id))
+      .returning();
+    return donation || undefined;
+  }
+}
+
+export const storage = new DatabaseStorage();
