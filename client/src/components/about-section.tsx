@@ -9,9 +9,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Mission</h2>
-            <p className="text-lg mb-6 leading-relaxed text-gray-300">
-              The Glow-Frame Initiative is a 501(c)(3) non-profit organization dedicated to empowering young adults from underserved communities in Arizona by providing them with real-world experience in the film and AV industries.
-            </p>
+            <p className="text-lg mb-6 leading-relaxed text-gray-300">Mission Statement: The Glow-Frame Initiative is a 501(c)(3) nonprofit organization dedicated to empowering individuals from underserved communities through real-world training in the film and audiovisual industries.</p>
             <p className="text-lg mb-6 leading-relaxed text-gray-300">
               Our comprehensive apprenticeship program is designed for individuals aged 16-24, offering hands-on training on actual film sets and behind the scenes at live events.
             </p>
