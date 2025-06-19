@@ -22,25 +22,25 @@ export default function AboutSection() {
           <div className="grid grid-cols-2 gap-4">
             {/* Audio production collaboration in professional studio */}
             <img 
-              src="@assets/Media/Site Images/collaborating-in-music-studio-with-audio-equipment-2025-03-16-05-21-25-utc.jpg" 
+              src="/images/collaborating-in-music-studio-with-audio-equipment-2025-03-16-05-21-25-utc.jpg" 
               alt="Audio production collaboration in professional studio" 
               className="rounded-lg shadow-lg object-cover h-48"
             />
             {/* Professional camera operator setting up equipment */}
             <img 
-              src="@assets/Media/Site Images/operator-setting-his-camera-before-shooting-2025-03-18-22-10-20-utc.jpg" 
+              src="/images/operator-setting-his-camera-before-shooting-2025-03-18-22-10-20-utc.jpg" 
               alt="Professional camera operator setting up equipment" 
               className="rounded-lg shadow-lg object-cover h-48"
             />
             {/* Live event camera crew capturing production */}
             <img 
-              src="@assets/Media/Site Images/cameramen-capturing-moments-at-a-live-event-2025-02-10-06-55-51-utc.jpg" 
+              src="/images/cameramen-capturing-moments-at-a-live-event-2025-02-10-06-55-51-utc.jpg" 
               alt="Live event camera crew capturing production" 
               className="rounded-lg shadow-lg object-cover h-48"
             />
             {/* Sound professionals working in studio environment */}
             <img 
-              src="@assets/Media/Site Images/sound-professionals-2025-03-16-23-48-18-utc.jpg" 
+              src="/images/sound-professionals-2025-03-16-23-48-18-utc.jpg" 
               alt="Sound professionals working in studio environment" 
               className="rounded-lg shadow-lg object-cover h-48"
             />

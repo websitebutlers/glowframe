@@ -9,7 +9,7 @@ export const PREVIOUS_WORKSHOPS = [
     completedDate: 'June 13, 2024',
     instructor: 'Parco Richardson - Producer & Writer',
     location: 'Downtown Phoenix',
-    image: '@assets/Media/Workshop Fliers/1.png'
+    image: '/images/1.png'
   },
   {
     id: 'led-video-wall-feb15',
@@ -20,7 +20,7 @@ export const PREVIOUS_WORKSHOPS = [
     location: 'Downtown Phoenix',
     maxStudents: 25,
     partner: 'ShowBoss AV',
-    image: '@assets/Media/Workshop Fliers/2.png'
+    image: '/images/2.png'
   },
   {
     id: 'scriptwriting-intro-dec14',
@@ -29,7 +29,7 @@ export const PREVIOUS_WORKSHOPS = [
     completedDate: 'December 14, 2023',
     instructor: 'Jermaine A. Shoulders',
     location: 'Downtown Phoenix',
-    image: '@assets/Media/Workshop Fliers/3.png'
+    image: '/images/3.png'
   },
   {
     id: 'special-event-audio-nov16',
@@ -38,7 +38,7 @@ export const PREVIOUS_WORKSHOPS = [
     completedDate: 'November 16, 2023',
     instructor: 'Chris Grimsley',
     location: 'Downtown Phoenix',
-    image: '@assets/Media/Workshop Fliers/4.png'
+    image: '/images/4.png'
   },
   {
     id: 'special-fx-makeup-apr12',
@@ -47,7 +47,7 @@ export const PREVIOUS_WORKSHOPS = [
     completedDate: 'April 12, 2023',
     instructor: 'Toy Taylor Goodgame - Owner of Motivating Beauty Coach, Published Author, Content Creator, Celebrity Makeup Artist, Licensed Hairstylist, Certified Makeup Artist, and SFX Artist',
     location: 'Downtown Phoenix',
-    image: '@assets/Media/Workshop Fliers/5.png'
+    image: '/images/5.png'
   },
   {
     id: 'lighting-interviews-nov9',
@@ -56,7 +56,7 @@ export const PREVIOUS_WORKSHOPS = [
     completedDate: 'November 9, 2022',
     instructor: 'Irin Daniels - Writer/Director/DP',
     location: 'Downtown Phoenix',
-    image: '@assets/Media/Workshop Fliers/6.png'
+    image: '/images/6.png'
   }
 ];
 

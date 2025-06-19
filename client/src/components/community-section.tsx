@@ -46,7 +46,7 @@ export default function CommunitySection() {
         <div className="bg-black p-8 rounded-lg border border-gray-800">
           {/* Theater performers collaborating on production */}
           <img 
-            src="@assets/Media/Site Images/two-performers-sitting-on-floor-in-theater-2025-03-10-05-13-22-utc.jpg" 
+            src="/images/two-performers-sitting-on-floor-in-theater-2025-03-10-05-13-22-utc.jpg" 
             alt="Theater performers collaborating on production" 
             className="w-full h-64 object-cover rounded-lg mb-6"
           />
