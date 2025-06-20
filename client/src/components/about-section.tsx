@@ -53,9 +53,7 @@ export default function AboutSection() {
         <div className="mt-24">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Leadership Team</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Meet the dedicated professionals guiding the Glow Frame Initiative's mission to empower emerging talent in Arizona's creative industries.
-            </p>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">Meet the dedicated professionals guiding the Glow-Frame Initiative's mission to empower emerging talent in Arizona's creative industries.</p>
           </div>
 
           {/* Board Members */}
@@ -84,9 +82,36 @@ export default function AboutSection() {
                 <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
                   <span className="text-gray-500 text-sm">Photo Coming Soon</span>
                 </div>
+                <h3 className="text-xl font-bold mb-2">Annette Daniels</h3>
+                <p className="text-electric-blue font-semibold mb-2">Executive Director</p>
+                <p className="text-gray-300 text-sm">Strategic leadership ensuring organizational excellence and growth</p>
+              </div>
+
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
                 <h3 className="text-xl font-bold mb-2">Janet Lyons</h3>
                 <p className="text-electric-blue font-semibold mb-2">Director of Philanthropy</p>
                 <p className="text-gray-300 text-sm">Building partnerships and funding opportunities for program expansion</p>
+              </div>
+
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Niki Christian</h3>
+                <p className="text-electric-blue font-semibold mb-2">Director of Communications</p>
+                <p className="text-gray-300 text-sm">Strategic communications and community engagement</p>
+              </div>
+
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Raquel Battle</h3>
+                <p className="text-electric-blue font-semibold mb-2">Outreach & Event Coordinator</p>
+                <p className="text-gray-300 text-sm">Community engagement and event management excellence</p>
               </div>
             </div>
           </div>
@@ -95,42 +120,6 @@ export default function AboutSection() {
           <div className="mb-16">
             <h3 className="text-3xl font-bold mb-8 text-center text-electric-blue">Staff</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Annette Daniels</h3>
-                <p className="text-white font-semibold mb-2">Executive Director</p>
-                <p className="text-gray-300 text-sm">Strategic leadership ensuring organizational excellence and growth</p>
-              </div>
-
-              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Niki Christian</h3>
-                <p className="text-white font-semibold mb-2">Director of Communications</p>
-                <p className="text-gray-300 text-sm">Strategic communications and community engagement</p>
-              </div>
-
-              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Christina Williams</h3>
-                <p className="text-white font-semibold mb-2">Youth & Community Advisory Coordinator</p>
-                <p className="text-gray-300 text-sm">Multitalented advocate connecting community needs with program solutions</p>
-              </div>
-
-              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Raquel Battle</h3>
-                <p className="text-white font-semibold mb-2">Outreach & Event Coordinator</p>
-                <p className="text-gray-300 text-sm">Community engagement and event management excellence</p>
-              </div>
-
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
                   <span className="text-gray-500 text-sm">Photo Coming Soon</span>
@@ -147,6 +136,15 @@ export default function AboutSection() {
                 <h3 className="text-xl font-bold mb-2">John Diaz</h3>
                 <p className="text-white font-semibold mb-2">Content Specialist/Instructor</p>
                 <p className="text-gray-300 text-sm">Expert instruction and curriculum development for hands-on learning</p>
+              </div>
+
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Christina Williams</h3>
+                <p className="text-white font-semibold mb-2">Youth & Community Advisory Coordinator</p>
+                <p className="text-gray-300 text-sm">Multitalented advocate connecting community needs with program solutions</p>
               </div>
 
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
