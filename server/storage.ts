@@ -111,13 +111,22 @@ export class MemStorage implements IStorage {
   }
 
   async createApprenticeInquiry(insertInquiry: InsertApprenticeInquiry): Promise<ApprenticeInquiry> {
-    // Not implemented for MemStorage - using database storage
-    throw new Error("MemStorage not implemented for apprentice inquiries");
+    const id = this.currentApprenticeInquiryId++;
+    const inquiry: ApprenticeInquiry = {
+      ...insertInquiry,
+      experience: insertInquiry.experience || null,
+      hearAbout: insertInquiry.hearAbout || null,
+      mailingList: insertInquiry.mailingList ?? false,
+      goals: insertInquiry.goals || null,
+      id,
+      createdAt: new Date()
+    };
+    this.apprenticeInquiries.set(id, inquiry);
+    return inquiry;
   }
 
   async getApprenticeInquiries(): Promise<ApprenticeInquiry[]> {
-    // Not implemented for MemStorage - using database storage
-    throw new Error("MemStorage not implemented for apprentice inquiries");
+    return Array.from(this.apprenticeInquiries.values());
   }
 
   async createMailingListEntry(insertEntry: InsertMailingList): Promise<MailingList> {
@@ -212,4 +221,5 @@ export class DatabaseStorage implements IStorage {
   }
 }
 
-export const storage = new DatabaseStorage();
+// Use memory storage if no database URL is provided (for local development)
+export const storage = process.env.DATABASE_URL ? new DatabaseStorage() : new MemStorage();
