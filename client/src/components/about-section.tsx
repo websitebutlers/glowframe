@@ -64,6 +64,15 @@ export default function AboutSection() {
                 <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
                   <span className="text-gray-500 text-sm">Photo Coming Soon</span>
                 </div>
+                <h3 className="text-xl font-bold mb-2">Annette Daniels</h3>
+                <p className="text-electric-blue font-semibold mb-2">Executive Director</p>
+                <p className="text-gray-300 text-sm">Strategic leadership ensuring organizational excellence and growth</p>
+              </div>
+
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
                 <h3 className="text-xl font-bold mb-2">Christopher Grimsley</h3>
                 <p className="text-electric-blue font-semibold mb-2">President</p>
                 <p className="text-gray-300 text-sm">Organizational leadership driving mission achievement</p>
@@ -76,15 +85,6 @@ export default function AboutSection() {
                 <h3 className="text-xl font-bold mb-2">Brytwauna Tang</h3>
                 <p className="text-electric-blue font-semibold mb-2">Treasurer</p>
                 <p className="text-gray-300 text-sm">Financial stewardship ensuring responsible resource management</p>
-              </div>
-
-              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Annette Daniels</h3>
-                <p className="text-electric-blue font-semibold mb-2">Executive Director</p>
-                <p className="text-gray-300 text-sm">Strategic leadership ensuring organizational excellence and growth</p>
               </div>
 
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
