@@ -14,7 +14,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/operator-using-camera-on-the-set-2025-03-18-22-13-17-utc.jpg')"
+            backgroundImage: "url('/images/selective-focus-of-multicultural-young-actor-and-a-2024-11-10-13-08-28-utc.jpg')"
           }}
         >
           <div className="absolute inset-0 bg-black/70"></div>
@@ -128,9 +128,9 @@ export default function Home() {
               />
             </div>
             <div className="flex justify-center">
-              <img 
-                src="/images/selective-focus-of-multicultural-young-actor-and-a-2024-11-10-13-08-28-utc.jpg"
-                alt="Selective focus of multicultural young actor" 
+              <img
+                src="/images/operator-using-camera-on-the-set-2025-03-18-22-13-17-utc.jpg"
+                alt="Professional camera operator on film set"
                 className="rounded-lg shadow-lg max-w-full h-auto object-contain"
               />
             </div>

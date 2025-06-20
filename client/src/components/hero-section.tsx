@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/images/operator-using-camera-on-the-set-2025-03-18-22-13-17-utc.jpg')"
+          backgroundImage: "url('/images/selective-focus-of-multicultural-young-actor-and-a-2024-11-10-13-08-28-utc.jpg')"
         }}
       >
         <div className="absolute inset-0 bg-black/70"></div>
