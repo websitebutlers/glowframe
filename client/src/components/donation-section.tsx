@@ -103,8 +103,8 @@ export default function DonationSection() {
 
   const createPaymentIntent = useMutation({
     mutationFn: async (data: { amount: number; name: string; email: string }) => {
-      const response = await apiRequest("POST", "/api/donations", data);
-      return response.json();
+      // Donation functionality temporarily disabled
+      throw new Error("Donation processing is currently being set up. Please contact us directly to make a donation.");
     },
     onSuccess: (data) => {
       setClientSecret(data.clientSecret);
@@ -115,8 +115,8 @@ export default function DonationSection() {
     },
     onError: (error: any) => {
       toast({
-        title: "Error",
-        description: error.message || "Failed to initialize payment. Please try again.",
+        title: "Donation Setup In Progress",
+        description: "Donation processing is currently being set up. Please contact us directly to make a donation.",
         variant: "destructive",
       });
     },
@@ -290,7 +290,7 @@ export default function DonationSection() {
                 className="w-full bg-glow-gold text-black hover:bg-yellow-400 font-bold"
                 size="lg"
               >
-                {createPaymentIntent.isPending ? "Processing..." : "Continue to Payment"}
+                {createPaymentIntent.isPending ? "Processing..." : "Donate Now"}
               </Button>
             </CardContent>
           </Card>
