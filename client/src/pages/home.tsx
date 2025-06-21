@@ -52,10 +52,10 @@ export default function Home() {
       </section>
       {/* Mission Statement */}
       <section className="relative py-24">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/IMG_6436.jpeg')"
+            backgroundImage: "url('/images/operator-using-camera-on-the-set-2025-03-18-22-13-17-utc.jpg')"
           }}
         >
           <div className="absolute inset-0 bg-black/70"></div>
@@ -129,8 +129,8 @@ export default function Home() {
             </div>
             <div className="flex justify-center">
               <img
-                src="/images/operator-using-camera-on-the-set-2025-03-18-22-13-17-utc.jpg"
-                alt="Professional camera operator on film set"
+                src="/images/IMG_6436.jpeg"
+                alt="Film production behind the scenes"
                 className="rounded-lg shadow-lg max-w-full h-auto object-contain"
               />
             </div>
