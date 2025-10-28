@@ -30,10 +30,65 @@ export default function Events() {
     <div className="min-h-screen bg-black text-white">
       <Navigation />
       <div className="pt-16">
+        {/* News Section */}
+        <section className="relative py-24 bg-gray-900">
+          {/* Blurred Background */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('/images/news/DS4.jpg')",
+              filter: "blur(8px)",
+              opacity: 0.3
+            }}
+          />
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-glow-gold">Latest News</h2>
+            </div>
+
+            <Card className="border border-gray-800 bg-black/90 backdrop-blur-sm overflow-hidden">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  {/* Text Content */}
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6">
+                      Darrell Cunningham Interviews WNBA Star Bridget Pettis
+                    </h3>
+                    <div className="space-y-4 text-gray-300 leading-relaxed">
+                      <p>
+                        Glow-Frame Initiative recently partnered with Darrell Cunningham for an inspiring on-site interview with WNBA star Bridget Pettis. Apprentices from the Glow-Frame Initiative worked behind the scenes, gaining real-world, hands-on training in every aspect of production—from camera operation and audio to lighting and set management.
+                      </p>
+                      <p>
+                        This experience embodies Glow-Frame's mission to provide practical, workforce-ready education for aspiring filmmakers and AV professionals. By working alongside industry leaders like Darrell Cunningham and Bridget Pettis, our apprentices continue to build the skills and confidence needed to excel in the field.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Images */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <img
+                      src="/images/news/DS1.jpg"
+                      alt="Darrell Cunningham interviewing Bridget Pettis - Scene 1"
+                      className="rounded-lg shadow-lg w-full h-96 md:h-[30rem] object-cover"
+                    />
+                    <img
+                      src="/images/news/DS21.jpg"
+                      alt="Darrell Cunningham interviewing Bridget Pettis - Scene 2"
+                      className="rounded-lg shadow-lg w-full h-96 md:h-[30rem] object-cover"
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Events Section */}
         <section className="py-24 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">News & Events</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">Upcoming Events</h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Join us for workshops, screenings, and community events that bring together aspiring filmmakers and industry professionals.
               </p>

@@ -73,6 +73,62 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Creative Solutions Workshop Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8 text-center">
+            {/* Heading */}
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Hands-On Filmmaking Workshop in Phoenix
+            </h2>
+
+            {/* Paragraph 1 */}
+            <p className="text-gray-300 text-lg leading-relaxed">
+              The Glow-Frame Initiative recently partnered with Creative Solutions, the parent company of Teradek, SmallHD, and Wooden Camera, to host a hands-on filmmaking class in Phoenix, Arizona. The workshop brought together local filmmakers and emerging creatives to learn the full camera pipeline using ARRI systems alongside Teradek and SmallHD equipment.
+            </p>
+
+            {/* Video/Link Content */}
+            <div className="space-y-4">
+              <div className="relative aspect-video bg-black rounded-lg overflow-hidden border-2 border-glow-gold">
+                {/* Frame.io doesn't support direct embedding, so we'll create an attractive CTA */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: "url('/images/operator-using-camera-on-the-set-2025-03-18-22-13-17-utc.jpg')"
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                    <div className="text-center space-y-4">
+                      <div className="text-6xl">▶</div>
+                      <p className="text-xl font-semibold">Watch Workshop Highlights</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://f.io/PKdchYXz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button
+                  className="w-full bg-glow-gold text-black px-8 py-4 text-lg font-bold hover:bg-yellow-400 transition-colors duration-200"
+                  size="lg"
+                >
+                  Watch on Frame.io →
+                </Button>
+              </a>
+            </div>
+
+            {/* Paragraph 2 */}
+            <p className="text-white font-semibold text-lg leading-relaxed">
+              Special thanks to our partners at Arizona Camera Rentals — Tran and Adien — for leading the class and sharing their expertise. Their hands-on instruction gave our students real-world experience with ARRI cameras, Teradek transmitters, and SmallHD monitors. We're grateful for their partnership and continued support in helping us train the next generation of filmmakers here in Phoenix.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-24 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,6 +167,45 @@ export default function Home() {
                   Get Started
                 </Button>
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Facade Film Practicum Section */}
+      <section className="py-24 bg-black">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Video Content */}
+            <div className="order-2 lg:order-1">
+              <div className="relative aspect-video rounded-lg overflow-hidden border-2 border-electric-blue shadow-2xl">
+                <iframe
+                  src="https://player.vimeo.com/video/1117636861?h=ae3b8714fb&title=0&byline=0&portrait=0"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Facade - Glow-Frame Initiative Film Practicum"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <div className="order-1 lg:order-2 space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold">
+                Apprenticeship Film: <span className="text-electric-blue">Facade</span>
+              </h2>
+              <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+                <p>
+                  The Glow-Frame Initiative recently completed production on a learning film practicum titled <span className="text-white font-semibold">Facade</span> — an immersive, hands-on project designed to train the next generation of filmmakers.
+                </p>
+                <p>
+                  The production featured <span className="text-white font-semibold">18 apprentices</span> who received real-world training and on-the-spot learning as they worked across every department, including camera, lighting, sound, and production design. The project also included over <span className="text-white font-semibold">25 first-time actors</span>, many of whom were introduced to the filmmaking process for the very first time.
+                </p>
+                <p>
+                  Through this initiative, Glow-Frame continues to create meaningful opportunities for emerging creatives to gain professional experience and develop the skills needed for successful careers in film and media production.
+                </p>
+              </div>
             </div>
           </div>
         </div>
