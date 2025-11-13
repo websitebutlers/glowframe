@@ -63,9 +63,9 @@ export default function AboutSection() {
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
                   <img
-                    src="/images/team/Annette Professional Headshot.png"
+                    src="/images/team/Photoroom/Annette Professional Headshot.jpg"
                     alt="Annette Daniels"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Annette Daniels</h3>
@@ -76,9 +76,9 @@ export default function AboutSection() {
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
                   <img
-                    src="/images/team/CHRIS.jpg"
+                    src="/images/team/Photoroom/CHRIS.jpg"
                     alt="Christopher Grimsley"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Christopher Grimsley</h3>
@@ -89,9 +89,9 @@ export default function AboutSection() {
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
                   <img
-                    src="/images/team/TANG.jpeg"
+                    src="/images/team/Photoroom/TANG.jpg"
                     alt="Brytwauna Tang"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Brytwauna Tang</h3>
@@ -102,9 +102,9 @@ export default function AboutSection() {
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
                   <img
-                    src="/images/team/Janet_Lyons_White_500x500.jpg"
+                    src="/images/team/Photoroom/Janet_Lyons_White_500x500.jpg"
                     alt="Janet Lyons"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Janet Lyons</h3>
@@ -115,9 +115,9 @@ export default function AboutSection() {
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
                   <img
-                    src="/images/team/NIKKI.jpg"
+                    src="/images/team/Photoroom/NIKKI.jpg"
                     alt="Niki Christian"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Niki Christian</h3>
@@ -126,12 +126,25 @@ export default function AboutSection() {
               </div>
 
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
+                  <img
+                    src="/images/team/Photoroom/IMG_8158.jpg"
+                    alt="Raquel Battle"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Raquel Battle</h3>
                 <p className="text-electric-blue font-semibold mb-2">Outreach & Event Coordinator</p>
                 <p className="text-gray-300 text-sm">Community engagement and event management excellence</p>
+              </div>
+
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Lauren Leverette</h3>
+                <p className="text-electric-blue font-semibold mb-2">Chairman of the Board</p>
+                <p className="text-gray-300 text-sm">Board leadership and strategic governance</p>
               </div>
             </div>
           </div>
@@ -141,8 +154,12 @@ export default function AboutSection() {
             <h3 className="text-3xl font-bold mb-8 text-center text-electric-blue">Staff</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
+                  <img
+                    src="/images/team/Photoroom/IMG_3294.jpg"
+                    alt="Daaron Battle"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Daaron Battle</h3>
                 <p className="text-white font-semibold mb-2">Director of Community Programming</p>
@@ -152,9 +169,9 @@ export default function AboutSection() {
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
                   <img
-                    src="/images/team/JOHN.jpg"
+                    src="/images/team/Photoroom/JOHN.jpg"
                     alt="John Diaz"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">John Diaz</h3>
@@ -165,9 +182,9 @@ export default function AboutSection() {
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
                   <img
-                    src="/images/team/CHRISSY.jpg"
+                    src="/images/team/Photoroom/CHRISSY.jpg"
                     alt="Christina Williams"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Christina Williams</h3>
@@ -176,8 +193,12 @@ export default function AboutSection() {
               </div>
 
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
+                  <img
+                    src="/images/team/Photoroom/GlowFrame11384.NEF.p.jpg"
+                    alt="Reuben 'Fleek' Anderson"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Reuben "Fleek" Anderson</h3>
                 <p className="text-white font-semibold mb-2">Director of Marketing</p>
@@ -185,12 +206,25 @@ export default function AboutSection() {
               </div>
 
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
+                  <img
+                    src="/images/team/Photoroom/IMG_8561.jpg"
+                    alt="Dametra Grimsley"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Dametra Grimsley</h3>
                 <p className="text-white font-semibold mb-2">Outreach and Event Coordinator, Veterans Initiative</p>
                 <p className="text-gray-300 text-sm">Coordinating outreach and events for veteran-focused programs</p>
+              </div>
+
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Laura Munoz Bottini</h3>
+                <p className="text-white font-semibold mb-2">Actor Programming</p>
+                <p className="text-gray-300 text-sm">Leading actor development and performance training programs</p>
               </div>
             </div>
           </div>
@@ -202,9 +236,9 @@ export default function AboutSection() {
               <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-gray-800">
                   <img
-                    src="/images/team/IRIN.jpg"
+                    src="/images/team/Photoroom/IRIN.jpg"
                     alt="Irin 'Iroc' Daniels"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Irin "Iroc" Daniels</h3>
@@ -219,6 +253,21 @@ export default function AboutSection() {
                 <h3 className="text-xl font-bold mb-2">Joeseph "Soulman" Valiente</h3>
                 <p className="text-glow-gold font-semibold mb-2">Co-Founder</p>
                 <p className="text-gray-300 text-sm">Creative force bringing authentic industry experience to our programs</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Board of Advisors */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center text-electric-blue">Board of Advisors</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Jeff Reynolds</h3>
+                <p className="text-electric-blue font-semibold mb-2">Board Advisor</p>
+                <p className="text-gray-300 text-sm">Strategic guidance and industry expertise</p>
               </div>
             </div>
           </div>

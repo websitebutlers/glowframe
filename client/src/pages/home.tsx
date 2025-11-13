@@ -90,35 +90,16 @@ export default function Home() {
 
             {/* Video/Link Content */}
             <div className="space-y-4">
-              <div className="relative aspect-video bg-black rounded-lg overflow-hidden border-2 border-glow-gold">
-                {/* Frame.io doesn't support direct embedding, so we'll create an attractive CTA */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: "url('/images/operator-using-camera-on-the-set-2025-03-18-22-13-17-utc.jpg')"
-                  }}
-                >
-                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                    <div className="text-center space-y-4">
-                      <div className="text-6xl">▶</div>
-                      <p className="text-xl font-semibold">Watch Workshop Highlights</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative aspect-video rounded-lg overflow-hidden border-2 border-glow-gold shadow-2xl">
+                <iframe
+                  src="https://player.vimeo.com/video/1131879220?h=9b03671da3&title=0&byline=0&portrait=0"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Creative Solutions Workshop Highlights"
+                ></iframe>
               </div>
-              <a
-                href="https://f.io/PKdchYXz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <Button
-                  className="w-full bg-glow-gold text-black px-8 py-4 text-lg font-bold hover:bg-yellow-400 transition-colors duration-200"
-                  size="lg"
-                >
-                  Watch on Frame.io →
-                </Button>
-              </a>
             </div>
 
             {/* Paragraph 2 */}

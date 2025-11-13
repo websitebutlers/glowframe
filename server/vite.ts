@@ -40,7 +40,16 @@ export async function setupVite(app: Express, server: Server) {
     appType: "custom",
   });
 
+  // Explicitly serve images from the client/public directory to avoid SPA catch-all intercepting
+  app.use(
+    "/images",
+    express.static(
+      path.resolve(import.meta.dirname, "..", "client", "public", "images"),
+    ),
+  );
+
   app.use(vite.middlewares);
+
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
 
