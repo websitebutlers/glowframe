@@ -158,15 +158,6 @@ export default function AboutSection() {
                 <p className="text-electric-blue font-semibold mb-2">Actor Programming</p>
                 <p className="text-gray-300 text-sm">Leading actor development and performance training programs</p>
               </div>
-              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Jeff Reynolds</h3>
-                <p className="text-electric-blue font-semibold mb-2">Advisory Board Member</p>
-                <p className="text-gray-300 text-sm">Strategic guidance and industry expertise</p>
-              </div>
-
 
             </div>
           </div>
@@ -274,8 +265,16 @@ export default function AboutSection() {
 
           {/* Board of Advisors */}
           <div className="mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center text-glow-gold">Board of Advisors</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-
+              <div className="bg-black border border-gray-800 rounded-lg p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Photo Coming Soon</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Jeff Reynolds</h3>
+                <p className="text-electric-blue font-semibold mb-2">Advisory Board Member</p>
+                <p className="text-gray-300 text-sm">Strategic guidance and industry expertise</p>
+              </div>
             </div>
           </div>
         </div>
