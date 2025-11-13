@@ -163,7 +163,7 @@ export default function AboutSection() {
                   <span className="text-gray-500 text-sm">Photo Coming Soon</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Jeff Reynolds</h3>
-                <p className="text-electric-blue font-semibold mb-2">Board Member</p>
+                <p className="text-electric-blue font-semibold mb-2">Advisory Board Member</p>
                 <p className="text-gray-300 text-sm">Strategic guidance and industry expertise</p>
               </div>
 
