@@ -74,6 +74,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Anniversary Event Teaser */}
+      <section className="py-24 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="border-4 border-glow-gold p-8 md:p-12 bg-black/50 backdrop-blur-sm">
+            <div className="text-center space-y-6">
+              <div className="inline-block">
+                <span className="bg-glow-gold text-black px-4 py-2 text-sm font-bold tracking-wider">
+                  DECEMBER 9, 2025
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold">
+                Glow Frame One Year Anniversary
+              </h2>
+              <p className="text-xl md:text-2xl text-electric-blue font-semibold">
+                Film Night • Awards Experience • Apprentice Graduation
+              </p>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                Join us for an evening of film screenings, creative excellence, and celebration at The Pemberton House in downtown Phoenix.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+                <div className="space-y-2">
+                  <img
+                    src="/images/news/IMG_6444.jpg"
+                    alt="Facade Film"
+                    className="rounded-lg w-full h-48 object-cover border-2 border-gray-700 hover:border-electric-blue transition-colors"
+                  />
+                  <p className="text-sm font-semibold">Facade Screening</p>
+                </div>
+                <div className="space-y-2">
+                  <img
+                    src="/images/news/1000003611.jpeg"
+                    alt="The Darrell Show"
+                    className="rounded-lg w-full h-48 object-cover border-2 border-gray-700 hover:border-electric-blue transition-colors"
+                  />
+                  <p className="text-sm font-semibold">The Darrell Show Pilot</p>
+                </div>
+                <div className="space-y-2">
+                  <img
+                    src="/images/news/1.jpeg"
+                    alt="Film Night Experience"
+                    className="rounded-lg w-full h-48 object-cover border-2 border-gray-700 hover:border-electric-blue transition-colors"
+                  />
+                  <p className="text-sm font-semibold">Awards & Celebration</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+                <a
+                  href="https://secure.givelively.org/event/glow-frame-initiative/glow-frame-live-award-show-film-night"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-glow-gold text-black px-8 py-4 text-lg font-bold hover:bg-yellow-400 transition-colors duration-200">
+                    Get Tickets Now
+                  </Button>
+                </a>
+                <Link href="/events">
+                  <Button
+                    variant="outline"
+                    className="border-2 border-white px-8 py-4 text-lg font-bold hover:bg-white hover:text-black transition-colors duration-200"
+                  >
+                    Event Details
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Creative Solutions Workshop Section */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
